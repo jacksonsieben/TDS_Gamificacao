@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 
-namespace ProjetoGerenciamentoRestaurante.RazorPages.Pages.Garcon
+namespace ProjetoGerenciamentoRestaurante.RazorPages.Pages.Produto
 {
     public class Details : PageModel
     {

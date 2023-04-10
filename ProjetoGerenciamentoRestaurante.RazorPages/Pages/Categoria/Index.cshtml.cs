@@ -1,24 +1,23 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.Extensions.Logging;
+using Microsoft.EntityFrameworkCore;
+using ProjetoGerenciamentoRestaurante.RazorPages.Data;
+using ProjetoGerenciamentoRestaurante.RazorPages.Models;
 
 namespace ProjetoGerenciamentoRestaurante.RazorPages.Pages.Categoria
 {
     public class Index : PageModel
     {
-        private readonly ILogger<Index> _logger;
-
-        public Index(ILogger<Index> logger)
+        private readonly AppDbContext _context;
+        public List<CategoriaModel> CategoriaList { get; set; } = new();
+        public Index(AppDbContext context)
         {
-            _logger = logger;
+            _context = context;
         }
 
-        public void OnGet()
-        {
+        public async Task<IActionResult> OnGetAsync(){
+            CategoriaList = await _context.Categoria!.ToListAsync();
+            return Page();
         }
     }
 }

@@ -1,11 +1,31 @@
 @page
 @model ProjetoGerenciamentoRestaurante.RazorPages.Pages.Categoria.Index
-@{
-    ViewData["Title"] = "Index";
-}
-
-<h1>@ViewData["Title"]</h1>
+<h1>Categoria Cadastradas</h1>
 
 <div>
-    
+    <table>
+        <thead>
+            <tr>
+                <td>ID Categoria</td>
+                <td>@Html.DisplayNameFor(model => model.CategoriaList[0].Nome) </td>
+                <td>@Html.DisplayNameFor(model => model.CategoriaList[0].Descricao)</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var categoriaModel in Model.CategoriaList)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(model => categoriaModel.CategoriaId)</td>
+                    <td>@Html.DisplayFor(model => categoriaModel.Nome)</td>
+                    <td>@Html.DisplayFor(model => categoriaModel.Descricao)</td>
+                    <td>
+                        <a asp-page="./Edit" asp-route-id="@categoriaModel.CategoriaId"> Modificar </a>
+                        <a asp-page="./Details" asp-route-id="@categoriaModel.CategoriaId"> Visualizar </a>
+                        <a asp-page="./Delete" asp-route-id="@categoriaModel.CategoriaId"> Remover </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
 </div>

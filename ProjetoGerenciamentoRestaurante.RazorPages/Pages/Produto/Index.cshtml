@@ -1,0 +1,33 @@
+@page
+@model ProjetoGerenciamentoRestaurante.RazorPages.Pages.Produto.Index
+<h1>Produtos Cadastrados</h1>
+
+<div>
+    <table>
+        <thead>
+            <tr>
+                <td>ID Produto</td>
+                <td>@Html.DisplayNameFor(model => model.ProdutoList[0].Nome) </td>
+                <td>@Html.DisplayNameFor(model => model.ProdutoList[0].Descricao)</td>
+                <td>@Html.DisplayNameFor(model => model.ProdutoList[0].Preco)</td>
+                <td>Categoria</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var produtoModel in Model.ProdutoList)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(model => produtoModel.ProdutoId)</td>
+                    <td>@Html.DisplayFor(model => produtoModel.Nome)</td>
+                    <td>@Html.DisplayFor(model => produtoModel.Descricao)</td>
+                    <td>@Html.DisplayFor(model => produtoModel.Preco)</td>
+                    <td>
+                        <a asp-page="./Edit" asp-route-id="@produtoModel.ProdutoId"> Modificar </a>
+                        <a asp-page="./Details" asp-route-id="@produtoModel.ProdutoId"> Visualizar </a>
+                        <a asp-page="./Delete" asp-route-id="@produtoModel.ProdutoId"> Remover </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "wGs+d9+pbWI6W1kl+gVk1AW05/QbLuGgNOIxsu+nSx1NaZPc8VE/ceoAumj8QWZ6v84s0d3Bu36GUIIcGWoKNw==",
+  "dgSpecHash": "WAe8F6PZi6dvV/zXSGpP4nw9ETGiBRixoavUBjZysVzuDtvt0MUvvHjXPSNifumc7JU3a0MoIskkKGFU0IgcLQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\rodri\\Documents\\Programacao\\APIs\\GamificacaoAtividade\\github_projeto\\TDS_Gameficacao\\ProjetoGerenciamentoRestaurante.RazorPages\\ProjetoGerenciamentoRestaurante.RazorPages.csproj",
+  "projectFilePath": "c:\\Users\\rodri\\OneDrive\\Documentos\\Programacao\\TDS\\ProjetoGamificao\\TDS_Gamificacao\\ProjetoGerenciamentoRestaurante.RazorPages\\ProjetoGerenciamentoRestaurante.RazorPages.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\rodri\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\rodri\\.nuget\\packages\\microsoft.data.sqlite.core\\7.0.4\\microsoft.data.sqlite.core.7.0.4.nupkg.sha512",
@@ -33,12 +33,5 @@
     "C:\\Users\\rodri\\.nuget\\packages\\system.text.encodings.web\\7.0.0\\system.text.encodings.web.7.0.0.nupkg.sha512",
     "C:\\Users\\rodri\\.nuget\\packages\\system.text.json\\7.0.0\\system.text.json.7.0.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problema ao ler o arquivo de cache C:\\Users\\rodri\\Documents\\Programacao\\APIs\\GamificacaoAtividade\\github_projeto\\TDS_Gameficacao\\ProjetoGerenciamentoRestaurante.RazorPages\\obj\\project.nuget.cache: Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }

@@ -16,6 +16,14 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\rodri\OneDrive\Documentos\Programacao\TDS\ProjetoGamificao\TDS_Gamificacao\ProjetoGerenciamentoRestaurante.RazorPages
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/rodri/OneDrive/Documentos/Programacao/TDS/ProjetoGamificao/TDS_Gamificacao/ProjetoGerenciamentoRestaurante.RazorPages/Pages/Atendimento/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXRlbmRpbWVudG9cRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rodri/OneDrive/Documentos/Programacao/TDS/ProjetoGamificao/TDS_Gamificacao/ProjetoGerenciamentoRestaurante.RazorPages/Pages/Atendimento/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXRlbmRpbWVudG9cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/rodri/OneDrive/Documentos/Programacao/TDS/ProjetoGamificao/TDS_Gamificacao/ProjetoGerenciamentoRestaurante.RazorPages/Pages/Categoria/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2F0ZWdvcmlhXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -50,6 +58,22 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/rodri/OneDrive/Documentos/Programacao/TDS/ProjetoGamificao/TDS_Gamificacao/ProjetoGerenciamentoRestaurante.RazorPages/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rodri/OneDrive/Documentos/Programacao/TDS/ProjetoGamificao/TDS_Gamificacao/ProjetoGerenciamentoRestaurante.RazorPages/Pages/Mesa/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWVzYVxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rodri/OneDrive/Documentos/Programacao/TDS/ProjetoGamificao/TDS_Gamificacao/ProjetoGerenciamentoRestaurante.RazorPages/Pages/Mesa/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWVzYVxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rodri/OneDrive/Documentos/Programacao/TDS/ProjetoGamificao/TDS_Gamificacao/ProjetoGerenciamentoRestaurante.RazorPages/Pages/Mesa/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWVzYVxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rodri/OneDrive/Documentos/Programacao/TDS/ProjetoGamificao/TDS_Gamificacao/ProjetoGerenciamentoRestaurante.RazorPages/Pages/Mesa/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWVzYVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/rodri/OneDrive/Documentos/Programacao/TDS/ProjetoGamificao/TDS_Gamificacao/ProjetoGerenciamentoRestaurante.RazorPages/Pages/Produto/Delete.cshtml]

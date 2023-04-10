@@ -125,7 +125,7 @@ SELECT
 	(SELECT COALESCE(MAX(ProdutoId),0) + 1 FROM Produto) as ProdutoId,
 	'Pizza de Calabresa' as Nome,
 	'Uma pizza de calabresa é um prato típico da culinária italiana, composta por uma base de massa de pizza coberta com molho de tomate, queijo muçarela e fatias de calabresa, que é uma linguiça defumada picante. Alguns ingredientes opcionais, como cebola, azeitonas e pimentão, podem ser adicionados para dar um sabor extra à pizza. A pizza de calabresa é uma opção popular em pizzarias em todo o mundo, sendo um prato muito apreciado por quem gosta de alimentos saborosos e picantes.' as Descricao,
-	3.66 as Preco,
+	37.66 as Preco,
 	4 as CategoriaId
 ;
 
@@ -374,20 +374,47 @@ insert into Pedido(
 )
 SELECT 
 	(SELECT COALESCE(MAX(PedidoId),0) + 1 FROM Pedido)as PedidoId,
-	1 as AtendimentoId,
+	2 as AtendimentoId,
 	3 as GarconId,
 	time('20:34:57') as HorarioPedido
+;
+
+insert into Pedido(
+	PedidoId,
+	AtendimentoId,
+	GarconId,
+	HorarioPedido
+)
+SELECT 
+	(SELECT COALESCE(MAX(PedidoId),0) + 1 FROM Pedido)as PedidoId,
+	2 as AtendimentoId,
+	2 as GarconId,
+	time('20:47:23') as HorarioPedido
 ;
 
 insert into Pedido_Produto(
 	PedidoProdutoId,
 	PedidoId,
-	ProdutoId
+	ProdutoId,
+	Quantidade
 )
 SELECT 
 	(SELECT COALESCE(MAX(PedidoProdutoId),0) + 1 FROM Pedido_Produto)as PedidoProdutoId,
 	1 as PedidoId,
 	4 AS ProdutoId,
 	3 as Quantidade
+;
+
+insert into Pedido_Produto(
+	PedidoProdutoId,
+	PedidoId,
+	ProdutoId,
+	Quantidade
+)
+SELECT 
+	(SELECT COALESCE(MAX(PedidoProdutoId),0) + 1 FROM Pedido_Produto)as PedidoProdutoId,
+	2 as PedidoId,
+	6 AS ProdutoId,
+	7 as Quantidade
 ;
 

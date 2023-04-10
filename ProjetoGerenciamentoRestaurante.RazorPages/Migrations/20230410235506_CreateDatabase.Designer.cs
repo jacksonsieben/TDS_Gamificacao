@@ -11,7 +11,7 @@ using ProjetoGerenciamentoRestaurante.RazorPages.Data;
 namespace ProjetoGerenciamentoRestaurante.RazorPages.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230410175558_CreateDatabase")]
+    [Migration("20230410235506_CreateDatabase")]
     partial class CreateDatabase
     {
         /// <inheritdoc />
@@ -126,7 +126,7 @@ namespace ProjetoGerenciamentoRestaurante.RazorPages.Migrations
                     b.ToTable("Pedido", (string)null);
                 });
 
-            modelBuilder.Entity("ProjetoGerenciamentoRestaurante.RazorPages.Models.Pedido_Produto", b =>
+            modelBuilder.Entity("ProjetoGerenciamentoRestaurante.RazorPages.Models.Pedido_ProdutoModel", b =>
                 {
                     b.Property<int>("PedidoProdutoId")
                         .ValueGeneratedOnAdd()
@@ -207,7 +207,7 @@ namespace ProjetoGerenciamentoRestaurante.RazorPages.Migrations
                     b.Navigation("Garcon");
                 });
 
-            modelBuilder.Entity("ProjetoGerenciamentoRestaurante.RazorPages.Models.Pedido_Produto", b =>
+            modelBuilder.Entity("ProjetoGerenciamentoRestaurante.RazorPages.Models.Pedido_ProdutoModel", b =>
                 {
                     b.HasOne("ProjetoGerenciamentoRestaurante.RazorPages.Models.PedidoModel", "Pedido")
                         .WithMany()

@@ -21,6 +21,7 @@
                     <td>@Html.DisplayFor(model => produtoModel.Nome)</td>
                     <td>@Html.DisplayFor(model => produtoModel.Descricao)</td>
                     <td>@Html.DisplayFor(model => produtoModel.Preco)</td>
+                    <td>@Html.DisplayFor(model => produtoModel.CategoriaId)</td>
                     <td>
                         <a asp-page="./Edit" asp-route-id="@produtoModel.ProdutoId"> Modificar </a>
                         <a asp-page="./Details" asp-route-id="@produtoModel.ProdutoId"> Visualizar </a>

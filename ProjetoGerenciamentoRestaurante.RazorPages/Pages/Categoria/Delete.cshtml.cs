@@ -4,42 +4,42 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 
-namespace ProjetoGerenciamentoRestaurante.RazorPages.Pages.Garcon
+namespace ProjetoGerenciamentoRestaurante.RazorPages.Pages.Categoria
 {
     public class Delete : PageModel
     {
         private readonly AppDbContext _context;
         [BindProperty]
 
-            public GarconModel GarconModel { get; set; } = new();
+            public CategoriaModel CategoriaModel { get; set; } = new();
             public Delete(AppDbContext context){
                 _context = context;
         }
 
         public async Task<IActionResult> OnGetAsync(int? id){
-            if(id == null || _context.Garcon == null){
+            if(id == null || _context.Categoria == null){
                 return NotFound();
             }
 
-            var garconModel = await _context.Garcon.FirstOrDefaultAsync(e => e.GarconId == id);
-            if(garconModel == null){
+            var categoriaModel = await _context.Categoria.FirstOrDefaultAsync(e => e.CategoriaId == id);
+            if(categoriaModel == null){
                 return NotFound();
             }
-            GarconModel = garconModel;
+            CategoriaModel = categoriaModel;
             return Page();
         }
 
         public async Task<IActionResult> OnPostAsync(int id){
-            var garconToDelete = await _context.Garcon!.FindAsync(id);
+            var categoriaToDelete = await _context.Categoria!.FindAsync(id);
 
-            if(garconToDelete == null){
+            if(categoriaToDelete == null){
                 return NotFound();
             }
 
             try{
-                _context.Garcon.Remove(garconToDelete);
+                _context.Categoria.Remove(categoriaToDelete);
                 await _context.SaveChangesAsync();
-                return RedirectToPage("/Garcon/Index");
+                return RedirectToPage("/Categoria/Index");
             } catch(DbUpdateException){
                 return Page();
             }

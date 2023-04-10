@@ -5,7 +5,14 @@
 
 <div>
     <p><strong>Numero: </strong> @Model.MesaModel.Numero </p>
-    <p><strong>Status: </strong> @Model.MesaModel.Status </p>
+    <p><strong>Status: </strong> 
+    @if (@Model.MesaModel.Status){
+        <bm>Mesa Ocupada</bm>
+    } 
+    else 
+    {
+        <bm>Mesa Desocupada</bm>
+    }</p>
     <p><strong>Hora da Abertura: </strong> @Model.MesaModel.HoraAbertura </p>
 </div>
 

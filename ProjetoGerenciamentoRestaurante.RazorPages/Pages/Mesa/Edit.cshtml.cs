@@ -42,7 +42,12 @@ namespace ProjetoGerenciamentoRestaurante.RazorPages.Pages.Mesa
 
             mesaToUpdate.Numero = MesaModel.Numero;
             mesaToUpdate.Status = MesaModel.Status;
-            mesaToUpdate.HoraAbertura = MesaModel.HoraAbertura;
+            if(MesaModel.Status){
+                mesaToUpdate.HoraAbertura = MesaModel.HoraAbertura;
+            }
+            else{
+                mesaToUpdate.HoraAbertura = null;
+            }
 
             try{
                 await _context.SaveChangesAsync();

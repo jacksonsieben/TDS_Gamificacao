@@ -2,7 +2,7 @@ using ProjetoGerenciamentoRestaurante.RazorPages.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace ProjetoGerenciamentoRestaurante.RazorPages.Data{
-    public class AddDbContext : DbContext
+    public class AppDbContext : DbContext
     {
         public DbSet<GarconModel>? Garcon {get; set;}
         public DbSet<MesaModel>? Mesa {get; set;}

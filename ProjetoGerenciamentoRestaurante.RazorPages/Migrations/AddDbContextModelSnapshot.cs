@@ -9,7 +9,7 @@ using ProjetoGerenciamentoRestaurante.RazorPages.Data;
 
 namespace ProjetoGerenciamentoRestaurante.RazorPages.Migrations
 {
-    [DbContext(typeof(AddDbContext))]
+    [DbContext(typeof(AppDbContext))]
     partial class AddDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

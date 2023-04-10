@@ -10,7 +10,7 @@ using ProjetoGerenciamentoRestaurante.RazorPages.Data;
 
 namespace ProjetoGerenciamentoRestaurante.RazorPages.Migrations
 {
-    [DbContext(typeof(AddDbContext))]
+    [DbContext(typeof(AppDbContext))]
     [Migration("20230410132538_CreateDatabase")]
     partial class CreateDatabase
     {

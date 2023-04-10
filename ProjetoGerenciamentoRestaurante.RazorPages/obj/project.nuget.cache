@@ -1,5 +1,6 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "R9oY2eiDl7AQMGlTnhqNVFvUjpGq2xa10RSxZK0NifZnY3yln/cHR22rTg3az9SoK8MUUMqjA2D81uAFm4MTcA==",
   "success": true,
   "projectFilePath": "C:\\Users\\rodri\\Documents\\Programacao\\APIs\\GamificacaoAtividade\\github_projeto\\TDS_Gameficacao\\ProjetoGerenciamentoRestaurante.RazorPages\\ProjetoGerenciamentoRestaurante.RazorPages.csproj",
@@ -33,5 +34,11 @@
     "C:\\Users\\rodri\\.nuget\\packages\\system.text.encodings.web\\7.0.0\\system.text.encodings.web.7.0.0.nupkg.sha512",
     "C:\\Users\\rodri\\.nuget\\packages\\system.text.json\\7.0.0\\system.text.json.7.0.0.nupkg.sha512"
   ],
+=======
+  "dgSpecHash": "oHrvEv4Tz99ZVNHSdO2LJQyHY3vfZYKOvbWDrR6TZC22Nov4T+IVVK2ppbo0dbVVL1mdxCt1iY7ZkdkK8CRi8w==",
+  "success": true,
+  "projectFilePath": "c:\\Users\\rodri\\Documents\\Programacao\\APIs\\GamificacaoAtividade\\github_projeto\\TDS_Gameficacao\\ProjetoGerenciamentoRestaurante.RazorPages\\ProjetoGerenciamentoRestaurante.RazorPages.csproj",
+  "expectedPackageFiles": [],
+>>>>>>> ae83dd9d66d72d34792ab17ac7635b3421bdefe6
   "logs": []
 }

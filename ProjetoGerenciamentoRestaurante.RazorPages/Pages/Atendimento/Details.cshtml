@@ -1,0 +1,42 @@
+@page "{id:int}"
+@model ProjetoGerenciamentoRestaurante.RazorPages.Pages.Atendimento.Details
+
+@* <h1>Atendimento: @Model.Pedido.Atendimento.AtendimentoId </h1> *@
+
+<div>
+    @* <strong>Mesa: </strong> @Pedido_ProdutoList.Pedido.Atendimento.Mesa.Numero</p> *@
+    <p>
+        <table>
+        <thead>
+            <tr>
+                <td><strong>Pedido</strong></td>
+                <td><strong>Quantidade</strong></td>
+                <td><strong>Garçom</strong></td>
+                <td><strong>Horario do Pedido</strong></td>
+            </tr>
+        </thead>
+        <tbody>
+            @* @foreach (var pedido_ProdutoModel in Model.Pedido_ProdutoList)
+            { 
+                <tr>
+                    <td>@Model.Pedido_ProdutoList.Produto.Nome</td>
+                    <td>@Model.Pedido_ProdutoModel.Quantidade</td>
+                    <td>@Model.Pedido_ProdutoModel.Pedido.Garcon.Nome @Model.Pedido_ProdutoModel.Pedido.Garcon.Sobrenome</td>
+                </tr>
+            }  *@
+
+            @foreach (var item in Model.Pedido_ProdutoList)
+            { 
+                <tr>
+                    <td>@item.Produto.Nome</td>
+                    <td>@item.Quantidade</td>
+                    <td>@item.Pedido.Garcon.Nome @item.Pedido.Garcon.Sobrenome</td>
+                    <td>@item.Pedido.HorarioPedido</td>
+                </tr>
+            }
+        </tbody>
+        </table>
+    </p>
+</div>
+
+<a asp-page="Index"> Voltar</a>

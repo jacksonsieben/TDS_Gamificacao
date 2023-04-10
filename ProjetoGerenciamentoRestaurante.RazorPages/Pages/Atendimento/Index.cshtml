@@ -1,0 +1,34 @@
+@page
+@model ProjetoGerenciamentoRestaurante.RazorPages.Pages.Atendimento.Index
+<h1>Produtos Cadastrados</h1>
+
+<div>
+    <table>
+        <thead>
+            <tr>
+                <td>ID Atendimento</td>
+                <td>ID Mesa</td>
+                <td>Numero da Mesa</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var atendimentoModel in Model.AtendimentoList)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(model => atendimentoModel.AtendimentoId)</td>
+                    <td>@Html.DisplayFor(model => atendimentoModel.MesaId)</td>
+                    <td>@if (atendimentoModel.Mesa != null){
+                            @Html.DisplayFor(model => atendimentoModel.Mesa.Numero)
+                        }
+                        else{}
+                    </td>                    
+                    <td>
+                        <a asp-page="./Edit" asp-route-id="@atendimentoModel.AtendimentoId"> Modificar Atendimento</a>
+                        <a asp-page="./Details" asp-route-id="@atendimentoModel.AtendimentoId"> Visualizar Pedidos </a>
+                        <a asp-page="./Delete" asp-route-id="@atendimentoModel.AtendimentoId"> Remover </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

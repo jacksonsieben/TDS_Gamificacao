@@ -9,22 +9,25 @@ namespace ProjetoGerenciamentoRestaurante.RazorPages.Pages.Produto
     public class Details : PageModel
     {
         private readonly AppDbContext _context;
-        public GarconModel GarconModel { get; set; } = new();
+        public ProdutoModel ProdutoModel { get; set; } = new();
 
         public Details(AppDbContext context){
             _context = context;
         }
 
         public async Task<IActionResult> OnGetAsync(int? id){
-            if(id == null || _context.Garcon == null){
+            if(id == null || _context.Produto == null){
                 return NotFound();
             }
 
-            var garconModel = await _context.Garcon.FirstOrDefaultAsync(e => e.GarconId == id);
-            if(garconModel == null){
+            var produtoModel = await _context.Produto
+            .Include(p => p.Categoria)
+            .FirstOrDefaultAsync(e => e.ProdutoId == id);
+
+            if(produtoModel == null){
                 return NotFound();
             }
-            GarconModel = garconModel;
+            ProdutoModel = produtoModel;
             return Page();
         }
     }

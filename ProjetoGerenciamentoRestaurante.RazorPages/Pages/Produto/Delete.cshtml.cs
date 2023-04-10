@@ -11,35 +11,35 @@ namespace ProjetoGerenciamentoRestaurante.RazorPages.Pages.Produto
         private readonly AppDbContext _context;
         [BindProperty]
 
-            public GarconModel GarconModel { get; set; } = new();
+            public ProdutoModel ProdutoModel { get; set; } = new();
             public Delete(AppDbContext context){
                 _context = context;
         }
 
         public async Task<IActionResult> OnGetAsync(int? id){
-            if(id == null || _context.Garcon == null){
+            if(id == null || _context.Produto == null){
                 return NotFound();
             }
 
-            var garconModel = await _context.Garcon.FirstOrDefaultAsync(e => e.GarconId == id);
-            if(garconModel == null){
+            var produtoModel = await _context.Produto.FirstOrDefaultAsync(e => e.ProdutoId == id);
+            if(produtoModel == null){
                 return NotFound();
             }
-            GarconModel = garconModel;
+            ProdutoModel = produtoModel;
             return Page();
         }
 
         public async Task<IActionResult> OnPostAsync(int id){
-            var garconToDelete = await _context.Garcon!.FindAsync(id);
+            var produtoToDelete = await _context.Produto!.FindAsync(id);
 
-            if(garconToDelete == null){
+            if(produtoToDelete == null){
                 return NotFound();
             }
 
             try{
-                _context.Garcon.Remove(garconToDelete);
+                _context.Produto.Remove(produtoToDelete);
                 await _context.SaveChangesAsync();
-                return RedirectToPage("/Garcon/Index");
+                return RedirectToPage("/Produto/Index");
             } catch(DbUpdateException){
                 return Page();
             }

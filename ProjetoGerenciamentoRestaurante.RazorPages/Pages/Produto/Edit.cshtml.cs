@@ -11,21 +11,28 @@ namespace ProjetoGerenciamentoRestaurante.RazorPages.Pages.Produto
         private readonly AppDbContext _context;
         [BindProperty]
 
-            public GarconModel GarconModel { get; set; } = new();
+            public ProdutoModel ProdutoModel { get; set; } = new();
             public Edit(AppDbContext context){
                 _context = context;
         }
 
         public async Task<IActionResult> OnGetAsync(int? id){
-            if(id == null || _context.Garcon == null){
+            if(id == null || _context.Produto == null){
                 return NotFound();
             }
 
-            var garconModel = await _context.Garcon.FirstOrDefaultAsync(e => e.GarconId == id);
-            if(garconModel == null){
+            var produtoModel = await _context.Produto
+            .Include(p => p.Categoria)
+            .FirstOrDefaultAsync(e => e.ProdutoId == id);
+
+            var categoriaModel = await _context.Categoria.ToListAsync();
+
+            if(produtoModel == null){
                 return NotFound();
             }
-            GarconModel = garconModel;
+            ProdutoModel = produtoModel;
+            ViewBag.Categorias = categoriaModel;
+            
             return Page();
         }
 
@@ -34,20 +41,20 @@ namespace ProjetoGerenciamentoRestaurante.RazorPages.Pages.Produto
                 return Page();
             }
 
-            var garconToUpdate = await _context.Garcon!.FindAsync(id);
+            var produtoToUpdate = await _context.Produto!.FindAsync(id);
 
-            if(garconToUpdate == null){
+            if(produtoToUpdate == null){
                 return NotFound();
             }
 
-            garconToUpdate.Nome = GarconModel.Nome;
-            garconToUpdate.Sobrenome = GarconModel.Sobrenome;
-            garconToUpdate.Cpf = GarconModel.Cpf;
-            garconToUpdate.Telefone = GarconModel.Telefone;
+            produtoToUpdate.Nome = ProdutoModel.Nome;
+            produtoToUpdate.Descricao = ProdutoModel.Descricao;
+            produtoToUpdate.Preco = ProdutoModel.Preco;
+            produtoToUpdate.CategoriaId = ProdutoModel.CategoriaId;
 
             try{
                 await _context.SaveChangesAsync();
-                return RedirectToPage("/Garcon/Index");
+                return RedirectToPage("/Produto/Index");
             } catch(DbUpdateException){
                 return Page();
             }

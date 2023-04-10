@@ -1,11 +1,25 @@
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace ProjetoGerenciamentoRestaurante.RazorPages.Models
 {
     public class ProdutoModel
     {
-        public int Id { get; set; }
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int ProdutoId { get; set; }
+
+        [Required(ErrorMessage = "Nome é obrigatório!")]
         public string? Nome { get; set; }
+
+        [Required(ErrorMessage = "Descrição é obrigatório!")]
         public string? Descricao { get; set; }
+
+        [Required(ErrorMessage = "Preço é obrigatório!")]
         public decimal Preco { get; set; }
+        
+        [Required(ErrorMessage = "Categoria é obrigatória!")]
+        [ForeignKey("Categoria")]
         public int Id_Categoria { get; set; }
         public CategoriaModel? Categoria { get; set; }
     }

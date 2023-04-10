@@ -2,7 +2,7 @@ using ProjetoGerenciamentoRestaurante.RazorPages.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
-builder.Services.AddDbContext<AppDbContext>();
+builder.Services.AddDbContext<AddDbContext>();
 
 var app = builder.Build();
 

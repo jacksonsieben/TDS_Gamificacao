@@ -6,9 +6,10 @@ namespace ProjetoGerenciamentoRestaurante.RazorPages.Models
     public class AtendimentoModel
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int AtendimentoId { get; set; }
 
-        // [ForeignKey]
+        [ForeignKey("Mesa")]
         public int MesaId { get; set; }
         public MesaModel? Mesa { get; set; }
         //public int Id_Garcon { get; set; }

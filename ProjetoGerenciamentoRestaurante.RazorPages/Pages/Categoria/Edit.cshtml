@@ -1,0 +1,30 @@
+@page "{id:int}"
+@model ProjetoGerenciamentoRestaurante.RazorPages.Pages.Categoria.Edit
+
+<h1>Alterar Dados da Categoria</h1>
+
+<hr/>
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-dange"></div>
+            <input type="hidden" asp-for="CategoriaModel.CategoriaId"/>
+            <div class="form-group">
+                <label asp-for="CategoriaModel.Nome"></label>
+                <input asp-for="CategoriaModel.Nome" class="form-control"/>
+                <span asp-validation-for="CategoriaModel.Nome" class="text-dange"></span>
+            </div>
+            <br/>
+            <div class="form-group">
+                <label asp-for="CategoriaModel.Descricao"></label>
+                <input asp-for="CategoriaModel.Descricao" class="form-control"></textarea>
+                <span asp-validation-for="CategoriaModel.Descricao" class="text-dange"></span>
+            </div>
+            <br/>
+            <div class="form-group">
+                <input type="submit" class="btn btn-primary" value="Salvar"/>
+                <a asp-page="/Categoria/Index" class="btn btn-secondary"> Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>

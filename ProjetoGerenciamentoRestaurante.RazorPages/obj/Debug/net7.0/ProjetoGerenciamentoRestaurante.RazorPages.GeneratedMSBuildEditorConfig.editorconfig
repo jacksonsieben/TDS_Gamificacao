@@ -9,9 +9,17 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ProjetoGerenciamentoRestaurante.RazorPages
 build_property.RootNamespace = ProjetoGerenciamentoRestaurante.RazorPages
-build_property.ProjectDir = c:\Users\rodri\Documents\Programacao\APIs\GamificacaoAtividade\ProjetoGerenciamentoRestaurante.RazorPages\
+build_property.ProjectDir = c:\Users\rodri\Documents\Programacao\APIs\GamificacaoAtividade\github_projeto\TDS_Gameficacao\ProjetoGerenciamentoRestaurante.RazorPages\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = c:\Users\rodri\Documents\Programacao\APIs\GamificacaoAtividade\ProjetoGerenciamentoRestaurante.RazorPages
+build_property.MSBuildProjectDirectory = c:\Users\rodri\Documents\Programacao\APIs\GamificacaoAtividade\github_projeto\TDS_Gameficacao\ProjetoGerenciamentoRestaurante.RazorPages
 build_property._RazorSourceGeneratorDebug = 
+
+[c:/Users/rodri/Documents/Programacao/APIs/GamificacaoAtividade/github_projeto/TDS_Gameficacao/ProjetoGerenciamentoRestaurante.RazorPages/Pages/Garcon/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR2FyY29uXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/rodri/Documents/Programacao/APIs/GamificacaoAtividade/github_projeto/TDS_Gameficacao/ProjetoGerenciamentoRestaurante.RazorPages/Pages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 

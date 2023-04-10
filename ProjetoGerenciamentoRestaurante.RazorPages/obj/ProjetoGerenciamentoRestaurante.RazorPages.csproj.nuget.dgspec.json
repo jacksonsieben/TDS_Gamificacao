@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\rodri\\Documents\\Programacao\\APIs\\GamificacaoAtividade\\ProjetoGerenciamentoRestaurante.RazorPages\\ProjetoGerenciamentoRestaurante.RazorPages.csproj": {}
+    "c:\\Users\\rodri\\Documents\\Programacao\\APIs\\GamificacaoAtividade\\github_projeto\\TDS_Gameficacao\\ProjetoGerenciamentoRestaurante.RazorPages\\ProjetoGerenciamentoRestaurante.RazorPages.csproj": {}
   },
   "projects": {
-    "c:\\Users\\rodri\\Documents\\Programacao\\APIs\\GamificacaoAtividade\\ProjetoGerenciamentoRestaurante.RazorPages\\ProjetoGerenciamentoRestaurante.RazorPages.csproj": {
+    "c:\\Users\\rodri\\Documents\\Programacao\\APIs\\GamificacaoAtividade\\github_projeto\\TDS_Gameficacao\\ProjetoGerenciamentoRestaurante.RazorPages\\ProjetoGerenciamentoRestaurante.RazorPages.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\rodri\\Documents\\Programacao\\APIs\\GamificacaoAtividade\\ProjetoGerenciamentoRestaurante.RazorPages\\ProjetoGerenciamentoRestaurante.RazorPages.csproj",
+        "projectUniqueName": "c:\\Users\\rodri\\Documents\\Programacao\\APIs\\GamificacaoAtividade\\github_projeto\\TDS_Gameficacao\\ProjetoGerenciamentoRestaurante.RazorPages\\ProjetoGerenciamentoRestaurante.RazorPages.csproj",
         "projectName": "ProjetoGerenciamentoRestaurante.RazorPages",
-        "projectPath": "c:\\Users\\rodri\\Documents\\Programacao\\APIs\\GamificacaoAtividade\\ProjetoGerenciamentoRestaurante.RazorPages\\ProjetoGerenciamentoRestaurante.RazorPages.csproj",
+        "projectPath": "c:\\Users\\rodri\\Documents\\Programacao\\APIs\\GamificacaoAtividade\\github_projeto\\TDS_Gameficacao\\ProjetoGerenciamentoRestaurante.RazorPages\\ProjetoGerenciamentoRestaurante.RazorPages.csproj",
         "packagesPath": "C:\\Users\\rodri\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\rodri\\Documents\\Programacao\\APIs\\GamificacaoAtividade\\ProjetoGerenciamentoRestaurante.RazorPages\\obj\\",
+        "outputPath": "c:\\Users\\rodri\\Documents\\Programacao\\APIs\\GamificacaoAtividade\\github_projeto\\TDS_Gameficacao\\ProjetoGerenciamentoRestaurante.RazorPages\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\rodri\\AppData\\Roaming\\NuGet\\NuGet.Config",

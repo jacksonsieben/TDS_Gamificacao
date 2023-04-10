@@ -18645,6 +18645,11 @@
   "RootNamespace": "ProjetoGerenciamentoRestaurante.RazorPages",
   "Documents": [
     {
+      "FilePath": "c:\\Users\\rodri\\Documents\\Programacao\\APIs\\GamificacaoAtividade\\github_projeto\\TDS_Gameficacao\\ProjetoGerenciamentoRestaurante.RazorPages\\Pages\\_ViewStart.cshtml",
+      "TargetPath": "Pages\\_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\rodri\\Documents\\Programacao\\APIs\\GamificacaoAtividade\\github_projeto\\TDS_Gameficacao\\ProjetoGerenciamentoRestaurante.RazorPages\\Pages\\Shared\\_MainMenuPartialPage.cshtml",
       "TargetPath": "Pages\\Shared\\_MainMenuPartialPage.cshtml",
       "FileKind": "mvc"
@@ -18657,6 +18662,11 @@
     {
       "FilePath": "c:\\Users\\rodri\\Documents\\Programacao\\APIs\\GamificacaoAtividade\\github_projeto\\TDS_Gameficacao\\ProjetoGerenciamentoRestaurante.RazorPages\\Pages\\Shared\\_MainLayout.cshtml",
       "TargetPath": "Pages\\Shared\\_MainLayout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\rodri\\Documents\\Programacao\\APIs\\GamificacaoAtividade\\github_projeto\\TDS_Gameficacao\\ProjetoGerenciamentoRestaurante.RazorPages\\Pages\\_ViewImports.cshtml",
+      "TargetPath": "Pages\\_ViewImports.cshtml",
       "FileKind": "mvc"
     },
     {

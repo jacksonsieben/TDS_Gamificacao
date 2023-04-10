@@ -10,7 +10,7 @@ using ProjetoGerenciamentoRestaurante.RazorPages.Data;
 namespace ProjetoGerenciamentoRestaurante.RazorPages.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AddDbContextModelSnapshot : ModelSnapshot
+    partial class AppDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
@@ -22,9 +22,6 @@ namespace ProjetoGerenciamentoRestaurante.RazorPages.Migrations
                     b.Property<int>("AtendimentoId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
-
-                    b.Property<DateTime>("HorarioPedido")
-                        .HasColumnType("TEXT");
 
                     b.Property<int>("MesaId")
                         .HasColumnType("INTEGER");
@@ -61,9 +58,6 @@ namespace ProjetoGerenciamentoRestaurante.RazorPages.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int?>("AtendimentoModelAtendimentoId")
-                        .HasColumnType("INTEGER");
-
                     b.Property<string>("Cpf")
                         .IsRequired()
                         .HasColumnType("TEXT");
@@ -82,8 +76,6 @@ namespace ProjetoGerenciamentoRestaurante.RazorPages.Migrations
 
                     b.HasKey("GarconId");
 
-                    b.HasIndex("AtendimentoModelAtendimentoId");
-
                     b.ToTable("Garcon", (string)null);
                 });
 
@@ -94,7 +86,6 @@ namespace ProjetoGerenciamentoRestaurante.RazorPages.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<DateTime?>("HoraAbertura")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<int>("Numero")
@@ -108,34 +99,77 @@ namespace ProjetoGerenciamentoRestaurante.RazorPages.Migrations
                     b.ToTable("Mesa", (string)null);
                 });
 
+            modelBuilder.Entity("ProjetoGerenciamentoRestaurante.RazorPages.Models.PedidoModel", b =>
+                {
+                    b.Property<int>("PedidoId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("AtendimentoId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("GarconId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("HorarioPedido")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("PedidoId");
+
+                    b.HasIndex("AtendimentoId");
+
+                    b.HasIndex("GarconId");
+
+                    b.ToTable("Pedido", (string)null);
+                });
+
+            modelBuilder.Entity("ProjetoGerenciamentoRestaurante.RazorPages.Models.Pedido_Produto", b =>
+                {
+                    b.Property<int>("PedidoProdutoId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("PedidoId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("ProdutoId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<double>("Quantidade")
+                        .HasColumnType("REAL");
+
+                    b.HasKey("PedidoProdutoId");
+
+                    b.HasIndex("PedidoId");
+
+                    b.HasIndex("ProdutoId");
+
+                    b.ToTable("Pedido_Produto", (string)null);
+                });
+
             modelBuilder.Entity("ProjetoGerenciamentoRestaurante.RazorPages.Models.ProdutoModel", b =>
                 {
                     b.Property<int>("ProdutoId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int?>("AtendimentoModelAtendimentoId")
+                    b.Property<int>("CategoriaId")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Descricao")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("Id_Categoria")
-                        .HasColumnType("INTEGER");
-
                     b.Property<string>("Nome")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<decimal>("Preco")
-                        .HasColumnType("TEXT");
+                    b.Property<double>("Preco")
+                        .HasColumnType("REAL");
 
                     b.HasKey("ProdutoId");
 
-                    b.HasIndex("AtendimentoModelAtendimentoId");
-
-                    b.HasIndex("Id_Categoria");
+                    b.HasIndex("CategoriaId");
 
                     b.ToTable("Produto", (string)null);
                 });
@@ -151,33 +185,53 @@ namespace ProjetoGerenciamentoRestaurante.RazorPages.Migrations
                     b.Navigation("Mesa");
                 });
 
-            modelBuilder.Entity("ProjetoGerenciamentoRestaurante.RazorPages.Models.GarconModel", b =>
+            modelBuilder.Entity("ProjetoGerenciamentoRestaurante.RazorPages.Models.PedidoModel", b =>
                 {
-                    b.HasOne("ProjetoGerenciamentoRestaurante.RazorPages.Models.AtendimentoModel", null)
-                        .WithMany("Garcons")
-                        .HasForeignKey("AtendimentoModelAtendimentoId");
+                    b.HasOne("ProjetoGerenciamentoRestaurante.RazorPages.Models.AtendimentoModel", "Atendimento")
+                        .WithMany()
+                        .HasForeignKey("AtendimentoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ProjetoGerenciamentoRestaurante.RazorPages.Models.GarconModel", "Garcon")
+                        .WithMany()
+                        .HasForeignKey("GarconId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Atendimento");
+
+                    b.Navigation("Garcon");
+                });
+
+            modelBuilder.Entity("ProjetoGerenciamentoRestaurante.RazorPages.Models.Pedido_Produto", b =>
+                {
+                    b.HasOne("ProjetoGerenciamentoRestaurante.RazorPages.Models.PedidoModel", "Pedido")
+                        .WithMany()
+                        .HasForeignKey("PedidoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ProjetoGerenciamentoRestaurante.RazorPages.Models.ProdutoModel", "Produto")
+                        .WithMany()
+                        .HasForeignKey("ProdutoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Pedido");
+
+                    b.Navigation("Produto");
                 });
 
             modelBuilder.Entity("ProjetoGerenciamentoRestaurante.RazorPages.Models.ProdutoModel", b =>
                 {
-                    b.HasOne("ProjetoGerenciamentoRestaurante.RazorPages.Models.AtendimentoModel", null)
-                        .WithMany("Produtos")
-                        .HasForeignKey("AtendimentoModelAtendimentoId");
-
                     b.HasOne("ProjetoGerenciamentoRestaurante.RazorPages.Models.CategoriaModel", "Categoria")
                         .WithMany()
-                        .HasForeignKey("Id_Categoria")
+                        .HasForeignKey("CategoriaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Categoria");
-                });
-
-            modelBuilder.Entity("ProjetoGerenciamentoRestaurante.RazorPages.Models.AtendimentoModel", b =>
-                {
-                    b.Navigation("Garcons");
-
-                    b.Navigation("Produtos");
                 });
 #pragma warning restore 612, 618
         }

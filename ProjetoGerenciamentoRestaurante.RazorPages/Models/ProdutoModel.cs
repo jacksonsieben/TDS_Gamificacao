@@ -16,11 +16,11 @@ namespace ProjetoGerenciamentoRestaurante.RazorPages.Models
         public string? Descricao { get; set; }
 
         [Required(ErrorMessage = "Preço é obrigatório!")]
-        public decimal Preco { get; set; }
+        public double Preco { get; set; }
         
         [Required(ErrorMessage = "Categoria é obrigatória!")]
         [ForeignKey("Categoria")]
-        public int Id_Categoria { get; set; }
+        public int CategoriaId { get; set; }
         public CategoriaModel? Categoria { get; set; }
     }
 }

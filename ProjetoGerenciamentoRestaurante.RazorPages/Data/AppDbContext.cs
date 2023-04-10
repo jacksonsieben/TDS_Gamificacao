@@ -9,6 +9,8 @@ namespace ProjetoGerenciamentoRestaurante.RazorPages.Data{
         public DbSet<ProdutoModel>? Produto {get; set;}
         public DbSet<CategoriaModel>? Categoria {get; set;}
         public DbSet<AtendimentoModel>? Atendimento {get; set;}
+        public DbSet<PedidoModel>? Pedido {get; set;}
+        public DbSet<Pedido_Produto>? Pedido_Produto {get; set;}
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
             => options.UseSqlite("DataSource=restaurante_db.db;Cache=Shared");
@@ -16,9 +18,11 @@ namespace ProjetoGerenciamentoRestaurante.RazorPages.Data{
         protected override void OnModelCreating(ModelBuilder modelBuilder){
             modelBuilder.Entity<GarconModel>().ToTable("Garcon");
             modelBuilder.Entity<MesaModel>().ToTable("Mesa");
-            modelBuilder.Entity<AtendimentoModel>().ToTable("Atendimento");
-            modelBuilder.Entity<CategoriaModel>().ToTable("Categoria");
             modelBuilder.Entity<ProdutoModel>().ToTable("Produto");
+            modelBuilder.Entity<CategoriaModel>().ToTable("Categoria");
+            modelBuilder.Entity<AtendimentoModel>().ToTable("Atendimento");
+            modelBuilder.Entity<PedidoModel>().ToTable("Pedido");
+            modelBuilder.Entity<Pedido_Produto>().ToTable("Pedido_Produto");
         }
     }
 }

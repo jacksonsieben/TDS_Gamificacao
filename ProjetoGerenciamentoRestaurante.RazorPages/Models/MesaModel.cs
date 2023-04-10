@@ -14,8 +14,7 @@ namespace ProjetoGerenciamentoRestaurante.RazorPages.Models
 
         [Required(ErrorMessage = "Status é obrigatório!")]
         public bool Status { get; set; }
-
-        [Required(ErrorMessage = "Hora de abertura é obrigatória!")]
+        
         public DateTime? HoraAbertura { get; set; }
     }
 }

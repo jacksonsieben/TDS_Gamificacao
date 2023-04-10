@@ -1,0 +1,12 @@
+@page "{id:int}"
+@model ProjetoGerenciamentoRestaurante.RazorPages.Pages.Mesa.Details
+
+<h1>Detalhes do Garçom: @Model.MesaModel.Numero</h1>
+
+<div>
+    <p><strong>Numero: </strong> @Model.MesaModel.Numero </p>
+    <p><strong>Status: </strong> @Model.MesaModel.Status </p>
+    <p><strong>Hora da Abertura: </strong> @Model.MesaModel.HoraAbertura </p>
+</div>
+
+<a asp-page="Index"> Voltar</a>

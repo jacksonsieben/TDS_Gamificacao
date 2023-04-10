@@ -10,12 +10,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("Atividade1.RazorPages")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("ProjetoGerenciamentoRestaurante.RazorPages")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
-[assembly: System.Reflection.AssemblyProductAttribute("Atividade1.RazorPages")]
-[assembly: System.Reflection.AssemblyTitleAttribute("Atividade1.RazorPages")]
+[assembly: System.Reflection.AssemblyProductAttribute("ProjetoGerenciamentoRestaurante.RazorPages")]
+[assembly: System.Reflection.AssemblyTitleAttribute("ProjetoGerenciamentoRestaurante.RazorPages")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Gerado pela classe WriteCodeFragment do MSBuild.

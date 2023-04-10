@@ -7,10 +7,10 @@
         <thead>
             <tr>
                 <td>ID Produto</td>
+                <td>Categoria</td>
                 <td>@Html.DisplayNameFor(model => model.ProdutoList[0].Nome) </td>
                 <td>@Html.DisplayNameFor(model => model.ProdutoList[0].Descricao)</td>
                 <td>@Html.DisplayNameFor(model => model.ProdutoList[0].Preco)</td>
-                <td>Categoria</td>
             </tr>
         </thead>
         <tbody>
@@ -18,10 +18,15 @@
             {
                 <tr>
                     <td>@Html.DisplayFor(model => produtoModel.ProdutoId)</td>
+                    <td>@if (produtoModel.Categoria != null){
+                            @Html.DisplayFor(model => produtoModel.Categoria.Nome)
+                        }
+                        else{}
+                    </td>
                     <td>@Html.DisplayFor(model => produtoModel.Nome)</td>
                     <td>@Html.DisplayFor(model => produtoModel.Descricao)</td>
                     <td>@Html.DisplayFor(model => produtoModel.Preco)</td>
-                    <td>@Html.DisplayFor(model => produtoModel.CategoriaId)</td>
+                    
                     <td>
                         <a asp-page="./Edit" asp-route-id="@produtoModel.ProdutoId"> Modificar </a>
                         <a asp-page="./Details" asp-route-id="@produtoModel.ProdutoId"> Visualizar </a>

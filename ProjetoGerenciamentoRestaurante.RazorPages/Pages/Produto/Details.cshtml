@@ -1,12 +1,12 @@
 @page "{id:int}"
 @model ProjetoGerenciamentoRestaurante.RazorPages.Pages.Produto.Details
 
-<h1>Detalhes do Garçom: @Model.ProdutoModel.Nome</h1>
+<h1>Detalhes do Produto:</h1>
+<h2> @Model.ProdutoModel.Nome</h2>
 
 <div>
-    <p><strong>Nome: </strong> @Model.ProdutoModel.Nome </p>
+    <p><strong>Categoria: </strong> @Model.ProdutoModel.Categoria.Nome </p>
     <p><strong>Descrição: </strong> @Model.ProdutoModel.Descricao </p>
-    <p><strong>Categoria: </strong> @Model.ProdutoModel.CategoriaId </p>
     <p><strong>Preço: R$</strong> @Model.ProdutoModel.Preco </p>
 </div>
 

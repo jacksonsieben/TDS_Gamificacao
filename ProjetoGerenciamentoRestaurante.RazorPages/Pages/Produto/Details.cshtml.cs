@@ -20,7 +20,10 @@ namespace ProjetoGerenciamentoRestaurante.RazorPages.Pages.Produto
                 return NotFound();
             }
 
-            var produtoModel = await _context.Produto.FirstOrDefaultAsync(e => e.ProdutoId == id);
+            var produtoModel = await _context.Produto
+            .Include(p => p.Categoria)
+            .FirstOrDefaultAsync(e => e.ProdutoId == id);
+
             if(produtoModel == null){
                 return NotFound();
             }

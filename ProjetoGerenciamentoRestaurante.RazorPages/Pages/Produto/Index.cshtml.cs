@@ -16,7 +16,9 @@ namespace ProjetoGerenciamentoRestaurante.RazorPages.Pages.Produto
         }
 
         public async Task<IActionResult> OnGetAsync(){
-            ProdutoList = await _context.Produto!.ToListAsync();
+            ProdutoList = await _context.Produto!
+            .Include(p => p.Categoria)
+            .ToListAsync();
             return Page();
         }
     }

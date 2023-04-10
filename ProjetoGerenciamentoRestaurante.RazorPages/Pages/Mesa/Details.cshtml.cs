@@ -4,30 +4,27 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 
-namespace ProjetoGerenciamentoRestaurante.RazorPages.Pages.Produto
+namespace ProjetoGerenciamentoRestaurante.RazorPages.Pages.Mesa
 {
     public class Details : PageModel
     {
         private readonly AppDbContext _context;
-        public ProdutoModel ProdutoModel { get; set; } = new();
+        public MesaModel MesaModel { get; set; } = new();
 
         public Details(AppDbContext context){
             _context = context;
         }
 
         public async Task<IActionResult> OnGetAsync(int? id){
-            if(id == null || _context.Produto == null){
+            if(id == null || _context.Mesa == null){
                 return NotFound();
             }
 
-            var produtoModel = await _context.Produto
-            .Include(p => p.Categoria)
-            .FirstOrDefaultAsync(e => e.ProdutoId == id);
-
-            if(produtoModel == null){
+            var mesaModel = await _context.Mesa.FirstOrDefaultAsync(e => e.MesaId == id);
+            if(mesaModel == null){
                 return NotFound();
             }
-            ProdutoModel = produtoModel;
+            MesaModel = mesaModel;
             return Page();
         }
     }

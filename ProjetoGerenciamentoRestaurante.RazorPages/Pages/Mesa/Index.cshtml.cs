@@ -4,21 +4,19 @@ using Microsoft.EntityFrameworkCore;
 using ProjetoGerenciamentoRestaurante.RazorPages.Data;
 using ProjetoGerenciamentoRestaurante.RazorPages.Models;
 
-namespace ProjetoGerenciamentoRestaurante.RazorPages.Pages.Produto
+namespace ProjetoGerenciamentoRestaurante.RazorPages.Pages.Mesa
 {
     public class Index : PageModel
     {
         private readonly AppDbContext _context;
 
-        public List<ProdutoModel> ProdutoList { get; set; } = new();
+        public List<MesaModel> MesaList { get; set; } = new();
         public Index(AppDbContext context){
             _context = context;
         }
 
         public async Task<IActionResult> OnGetAsync(){
-            ProdutoList = await _context.Produto!
-            .Include(p => p.Categoria)
-            .ToListAsync();
+            MesaList = await _context.Mesa!.ToListAsync();
             return Page();
         }
     }

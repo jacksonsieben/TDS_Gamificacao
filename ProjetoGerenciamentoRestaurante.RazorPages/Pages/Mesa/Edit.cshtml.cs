@@ -4,42 +4,49 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 
-namespace ProjetoGerenciamentoRestaurante.RazorPages.Pages.Produto
+namespace ProjetoGerenciamentoRestaurante.RazorPages.Pages.Mesa
 {
-    public class Delete : PageModel
+    public class Edit : PageModel
     {
         private readonly AppDbContext _context;
         [BindProperty]
 
-            public ProdutoModel ProdutoModel { get; set; } = new();
-            public Delete(AppDbContext context){
+            public MesaModel MesaModel { get; set; } = new();
+            public Edit(AppDbContext context){
                 _context = context;
         }
 
         public async Task<IActionResult> OnGetAsync(int? id){
-            if(id == null || _context.Produto == null){
+            if(id == null || _context.Mesa == null){
                 return NotFound();
             }
 
-            var produtoModel = await _context.Produto.FirstOrDefaultAsync(e => e.ProdutoId == id);
-            if(produtoModel == null){
+            var mesaModel = await _context.Mesa.FirstOrDefaultAsync(e => e.MesaId == id);
+            if(mesaModel == null){
                 return NotFound();
             }
-            ProdutoModel = produtoModel;
+            MesaModel = mesaModel;
             return Page();
         }
 
         public async Task<IActionResult> OnPostAsync(int id){
-            var produtoToDelete = await _context.Produto!.FindAsync(id);
+            if(!ModelState.IsValid){
+                return Page();
+            }
 
-            if(produtoToDelete == null){
+            var mesaToUpdate = await _context.Mesa!.FindAsync(id);
+
+            if(mesaToUpdate == null){
                 return NotFound();
             }
 
+            mesaToUpdate.Numero = MesaModel.Numero;
+            mesaToUpdate.Status = MesaModel.Status;
+            mesaToUpdate.HoraAbertura = MesaModel.HoraAbertura;
+
             try{
-                _context.Produto.Remove(produtoToDelete);
                 await _context.SaveChangesAsync();
-                return RedirectToPage("/Produto/Index");
+                return RedirectToPage("/Mesa/Index");
             } catch(DbUpdateException){
                 return Page();
             }

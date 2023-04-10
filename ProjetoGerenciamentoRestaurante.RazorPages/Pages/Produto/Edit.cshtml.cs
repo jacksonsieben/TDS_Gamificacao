@@ -4,28 +4,40 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 
-namespace ProjetoGerenciamentoRestaurante.RazorPages.Pages.Garcon
+namespace ProjetoGerenciamentoRestaurante.RazorPages.Pages.Produto
 {
     public class Edit : PageModel
     {
         private readonly AppDbContext _context;
         [BindProperty]
+        public ProdutoModel ProdutoModel { get; set; } = new();
 
-            public GarconModel GarconModel { get; set; } = new();
-            public Edit(AppDbContext context){
-                _context = context;
+        public List<CategoriaModel> CategoriaList { get; set; } = new();
+
+        public Edit(AppDbContext context){
+            _context = context;
         }
 
         public async Task<IActionResult> OnGetAsync(int? id){
-            if(id == null || _context.Garcon == null){
+            if(id == null || _context.Produto == null){
                 return NotFound();
             }
 
-            var garconModel = await _context.Garcon.FirstOrDefaultAsync(e => e.GarconId == id);
-            if(garconModel == null){
+            var produtoModel = await _context.Produto
+            .Include(p => p.Categoria)
+            .FirstOrDefaultAsync(e => e.ProdutoId == id);
+
+            if(produtoModel == null){
                 return NotFound();
             }
-            GarconModel = garconModel;
+            ProdutoModel = produtoModel;
+
+            /*##################*/
+            var categoria = CategoriaList.FirstOrDefault(c => c.CategoriaId == ProdutoModel.CategoriaId);
+            
+            CategoriaList = await _context.Categoria!.ToListAsync();
+            
+
             return Page();
         }
 
@@ -34,20 +46,20 @@ namespace ProjetoGerenciamentoRestaurante.RazorPages.Pages.Garcon
                 return Page();
             }
 
-            var garconToUpdate = await _context.Garcon!.FindAsync(id);
+            var produtoToUpdate = await _context.Produto!.FindAsync(id);
 
-            if(garconToUpdate == null){
+            if(produtoToUpdate == null){
                 return NotFound();
             }
 
-            garconToUpdate.Nome = GarconModel.Nome;
-            garconToUpdate.Sobrenome = GarconModel.Sobrenome;
-            garconToUpdate.Cpf = GarconModel.Cpf;
-            garconToUpdate.Telefone = GarconModel.Telefone;
+            produtoToUpdate.Nome = ProdutoModel.Nome;
+            produtoToUpdate.Descricao = ProdutoModel.Descricao;
+            produtoToUpdate.Preco = ProdutoModel.Preco;
+            produtoToUpdate.CategoriaId = ProdutoModel.CategoriaId;
 
             try{
                 await _context.SaveChangesAsync();
-                return RedirectToPage("/Garcon/Index");
+                return RedirectToPage("/Produto/Index");
             } catch(DbUpdateException){
                 return Page();
             }

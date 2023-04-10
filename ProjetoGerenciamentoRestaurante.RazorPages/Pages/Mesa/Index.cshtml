@@ -1,0 +1,33 @@
+@page
+@model ProjetoGerenciamentoRestaurante.RazorPages.Pages.Mesa.Index
+<h1>Mesas Cadastradas</h1>
+
+<div>
+    <table>
+        <thead>
+            <tr>
+                <td>ID Mesa</td>
+                <td>@Html.DisplayNameFor(model => model.MesaList[0].Numero) </td>
+                <td>@Html.DisplayNameFor(model => model.MesaList[0].Status)</td>
+                <td>@Html.DisplayNameFor(model => model.MesaList[0].HoraAbertura)</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var mesaModel in Model.MesaList)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(model => mesaModel.MesaId)</td>
+                    <td>@Html.DisplayFor(model => mesaModel.Numero)</td>
+                    <td>@Html.DisplayFor(model => mesaModel.Status)</td>
+                    <td>@Html.DisplayFor(model => mesaModel.HoraAbertura)</td>
+                    <td>
+                        <a asp-page="./Edit" asp-route-id="@mesaModel.MesaId"> Modificar </a>
+                        <a asp-page="./Details" asp-route-id="@mesaModel.MesaId"> Visualizar </a>
+                        <a asp-page="./Delete" asp-route-id="@mesaModel.MesaId"> Remover </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>

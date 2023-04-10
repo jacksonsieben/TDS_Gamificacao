@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>UTFPR - Gerenciador de Pedidos de Restaurante</title>
+    </head>
+    <body>
+        <header>
+            <partial name="./_MainMenuPartialPage.cshtml"/>
+        </header>
+
+        <main>
+            @RenderBody()
+        </main>
+
+        <p><hr/></p>
+        
+        <footer>2023 - Rodrigo Ribeiro, Lucas Passos, Jackson Sieben</footer>
+        @RenderSection("scripts", required:false)
+    </body>
+</html>

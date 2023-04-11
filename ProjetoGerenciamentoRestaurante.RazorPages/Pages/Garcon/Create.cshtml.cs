@@ -20,8 +20,6 @@ namespace ProjetoGerenciamentoRestaurante.RazorPages.Pages.Garcon
                 return Page();
             }
 
-            // var emptyGarcon = new GarconModel();
-
             try{
                 _context.Add(GarconModel);
                 await _context.SaveChangesAsync();
@@ -29,17 +27,7 @@ namespace ProjetoGerenciamentoRestaurante.RazorPages.Pages.Garcon
             } catch(DbUpdateException){
                 return Page();
             }
-
-            // if(await TryUpdateModelAsync<GarconModel>(emptyGarcon, "garcon",
-            // e => e.Nome,
-            // e => e.Sobrenome, 
-            // e => e.Cpf, 
-            // e => e.Telefone 
-            // )){
-            //     var entry = _context.Add(emptyGarcon);
-            //     await _context.SaveChangesAsync();
-            //     return RedirectToPage("/Garcon/Index");
-            // }
+            
         }
     }
 }

@@ -37,12 +37,12 @@ namespace ProjetoGerenciamentoRestaurante.RazorPages.Pages.Atendimento
 
             var pedido_ProdutoList = await _context.Pedido_Produto
             .Include(p => p.Pedido)
-                .ThenInclude(p => p.Garcon)
+                .ThenInclude(p => p!.Garcon)
             .Include(p => p.Pedido)
-                .ThenInclude(p => p.Atendimento)
-                    .ThenInclude(a => a.Mesa)
+                .ThenInclude(p => p!.Atendimento)
+                    .ThenInclude(a => a!.Mesa)
             .Include(p => p.Produto)
-            .Where(e => e.Pedido.Atendimento.AtendimentoId == id)
+            .Where(e => e.Pedido!.Atendimento!.AtendimentoId == id)
             .ToListAsync();
 
 

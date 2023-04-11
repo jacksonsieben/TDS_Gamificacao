@@ -4,7 +4,7 @@
 <h1>Atendimento: @Model.AtendimentoModel.AtendimentoId </h1>
 
 <div>
-    <strong>Mesa: </strong> @Model.AtendimentoModel.Mesa.Numero</p>
+    <strong>Mesa: </strong> @Model.AtendimentoModel.Mesa!.Numero</p>
     @if (Model.Pedido_ProdutoList.Any())
     {
         <table>
@@ -21,9 +21,9 @@
                 @foreach (var item in Model.Pedido_ProdutoList)
             { 
                 <tr>
-                    <td>@item.Produto.Nome</td>
+                    <td>@item.Produto!.Nome</td>
                     <td>@item.Quantidade</td>
-                    <td>@item.Pedido.Garcon.Nome @item.Pedido.Garcon.Sobrenome</td>
+                    <td>@item.Pedido!.Garcon!.Nome @item.Pedido.Garcon.Sobrenome</td>
                     <td>@item.Pedido.HorarioPedido</td>
                 </tr>
             }

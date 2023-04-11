@@ -21,7 +21,7 @@ namespace ProjetoGerenciamentoRestaurante.RazorPages.Pages.Mesa
 
             if (MesaModel != null) _context.Mesa!.Add(MesaModel);
 
-            if(MesaModel.Status is false){MesaModel.HoraAbertura = null;}
+            if(MesaModel!.Status is false){MesaModel.HoraAbertura = null;}
 
             try{
                 if(MesaModel.Status && MesaModel.HoraAbertura is null){

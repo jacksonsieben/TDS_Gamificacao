@@ -9,7 +9,7 @@ namespace ProjetoGerenciamentoRestaurante.RazorPages.Pages.Atendimento
     public class Details : PageModel
     {
         private readonly AppDbContext _context;
-        // public AtendimentoModel AtendimentoModel { get; set; } = new();
+        public AtendimentoModel AtendimentoModel { get; set; } = new();
         
         public List<Pedido_ProdutoModel> Pedido_ProdutoList { get; set; } = new();
         
@@ -21,6 +21,19 @@ namespace ProjetoGerenciamentoRestaurante.RazorPages.Pages.Atendimento
             if(id == null || _context.Pedido_Produto == null){
                 return NotFound();
             }
+            
+            if(id == null || _context.Atendimento == null){
+                return NotFound();
+            }
+
+            var atendimentoModel = await _context.Atendimento
+            .Include(p => p.Mesa)
+            .FirstOrDefaultAsync(e => e.AtendimentoId == id);
+
+            if(atendimentoModel == null){
+                return NotFound();
+            }
+            AtendimentoModel = atendimentoModel;
 
             var pedido_ProdutoList = await _context.Pedido_Produto
             .Include(p => p.Pedido)

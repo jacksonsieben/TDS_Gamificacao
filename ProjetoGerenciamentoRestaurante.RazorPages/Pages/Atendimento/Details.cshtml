@@ -1,11 +1,12 @@
 @page "{id:int}"
 @model ProjetoGerenciamentoRestaurante.RazorPages.Pages.Atendimento.Details
 
-@* <h1>Atendimento: @Model.Pedido.Atendimento.AtendimentoId </h1> *@
+<h1>Atendimento: @Model.AtendimentoModel.AtendimentoId </h1>
 
 <div>
-    @* <strong>Mesa: </strong> @Pedido_ProdutoList.Pedido.Atendimento.Mesa.Numero</p> *@
-    <p>
+    <strong>Mesa: </strong> @Model.AtendimentoModel.Mesa.Numero</p>
+    @if (Model.Pedido_ProdutoList.Any())
+    {
         <table>
         <thead>
             <tr>
@@ -16,16 +17,8 @@
             </tr>
         </thead>
         <tbody>
-            @* @foreach (var pedido_ProdutoModel in Model.Pedido_ProdutoList)
-            { 
-                <tr>
-                    <td>@Model.Pedido_ProdutoList.Produto.Nome</td>
-                    <td>@Model.Pedido_ProdutoModel.Quantidade</td>
-                    <td>@Model.Pedido_ProdutoModel.Pedido.Garcon.Nome @Model.Pedido_ProdutoModel.Pedido.Garcon.Sobrenome</td>
-                </tr>
-            }  *@
-
-            @foreach (var item in Model.Pedido_ProdutoList)
+            
+                @foreach (var item in Model.Pedido_ProdutoList)
             { 
                 <tr>
                     <td>@item.Produto.Nome</td>
@@ -36,7 +29,13 @@
             }
         </tbody>
         </table>
-    </p>
+        <a asp-page="Index"> Fechar Pedido</a>
+    }
+    else
+    {
+        <p><strong>Sem nenhum Pedido!!</strong></p>
+    }
+    <a asp-page="Index"> Voltar</a>
 </div>
 
-<a asp-page="Index"> Voltar</a>
+

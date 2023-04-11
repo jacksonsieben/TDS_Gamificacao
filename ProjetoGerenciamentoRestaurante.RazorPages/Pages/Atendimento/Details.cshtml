@@ -29,13 +29,17 @@
             }
         </tbody>
         </table>
-        <a asp-page="Index"> Fechar Pedido</a>
+        <a class="btn btn-sm btn-danger active" asp-page="./" asp-route-id="@Model.AtendimentoModel.AtendimentoId"> Fechar Atendimento </a>
     }
     else
     {
         <p><strong>Sem nenhum Pedido!!</strong></p>
     }
-    <a asp-page="Index"> Voltar</a>
+    @if (Model.AtendimentoModel.AtendimentoFechado is false)
+    {
+        <a class="btn btn-sm btn-success active" asp-page="./" asp-route-id="@Model.AtendimentoModel.AtendimentoId"> Novo Pedido </a>
+    }
+    <a class="btn btn-sm btn-primary active" asp-page="Index"> Voltar </a>
 </div>
 
 

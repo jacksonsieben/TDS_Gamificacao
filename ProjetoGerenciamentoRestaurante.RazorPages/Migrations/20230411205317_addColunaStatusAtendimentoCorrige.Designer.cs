@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ProjetoGerenciamentoRestaurante.RazorPages.Data;
 
@@ -10,9 +11,11 @@ using ProjetoGerenciamentoRestaurante.RazorPages.Data;
 namespace ProjetoGerenciamentoRestaurante.RazorPages.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230411205317_addColunaStatusAtendimentoCorrige")]
+    partial class addColunaStatusAtendimentoCorrige
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "7.0.4");

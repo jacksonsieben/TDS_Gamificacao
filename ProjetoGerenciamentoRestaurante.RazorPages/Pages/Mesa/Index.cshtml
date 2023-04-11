@@ -2,14 +2,16 @@
 @model ProjetoGerenciamentoRestaurante.RazorPages.Pages.Mesa.Index
 <h1>Mesas Cadastradas</h1>
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <div>
-    <table>
+    <table class="table table-bordered table-sm table-hover-custom">
         <thead>
             <tr>
-                <td>ID Mesa</td>
-                <td>@Html.DisplayNameFor(model => model.MesaList[0].Numero) </td>
-                <td>@Html.DisplayNameFor(model => model.MesaList[0].Status)</td>
-                <td>Libera as</td>
+                <th scope="col">ID Mesa</th>
+                <th scope="col">Número</th>
+                <th scope="col">@Html.DisplayNameFor(model => model.MesaList[0].Status)</th>
+                <th scope="col">Libera as</th>
+                <th scope="col"></th>
             </tr>
         </thead>
         <tbody>
@@ -21,15 +23,18 @@
                     <td>@Html.DisplayFor(model => mesaModel.Status)</td>
                     <td>@Html.DisplayFor(model => mesaModel.HoraAbertura)</td>
                     <td>
-                        <a asp-page="./Edit" asp-route-id="@mesaModel.MesaId"> Modificar </a>
-                        <a asp-page="./Details" asp-route-id="@mesaModel.MesaId"> Visualizar</a>
-                        <a asp-page="./Delete" asp-route-id="@mesaModel.MesaId"> Remover </a>
+                        <a class="btn btn-sm btn-secondary active" asp-page="./Edit" asp-route-id="@mesaModel.MesaId"> <i class="fa fa-pencil"></i> </a>
+                        <a class="btn btn-secondary btn-sm btn-success" asp-page="./Details" asp-route-id="@mesaModel.MesaId"> <i class="fa fa-eye"></i></a>
+                        <a class="btn btn-secondary btn-sm btn-danger" asp-page="./Delete" asp-route-id="@mesaModel.MesaId"> <i class="fa fa-trash"></i> </a>
                     </td>
                     
                 </tr>
             }
-            <a asp-page="./Add"> Adicionar nova mesa</a>
         </tbody>
     </table>
+<<<<<<< HEAD
 <a asp-page="./Add"> <strong>Cadastrar</strong></a>
+=======
+<p style="text-align:center"><a class="btn btn-primary" role="button" asp-page="./Create"> <strong>Cadastrar</strong></a></p>
+>>>>>>> 0d4d45bfd1f0c2855ff4a19a2cb54101f0455d95
 </div>

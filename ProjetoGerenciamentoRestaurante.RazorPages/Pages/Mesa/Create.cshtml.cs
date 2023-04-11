@@ -5,13 +5,13 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 namespace ProjetoGerenciamentoRestaurante.RazorPages.Pages.Mesa
 {
-    public class Add : PageModel
+    public class Create : PageModel
     {
         private readonly AppDbContext _context;
         [BindProperty]
 
             public MesaModel MesaModel { get; set; } = new();
-            public Add(AppDbContext context){
+            public Create(AppDbContext context){
                 _context = context;
         }
         public async Task<IActionResult> OnPostAsync(int id){

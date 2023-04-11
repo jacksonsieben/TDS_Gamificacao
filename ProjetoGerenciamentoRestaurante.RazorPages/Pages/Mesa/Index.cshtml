@@ -22,11 +22,13 @@
                     <td>@Html.DisplayFor(model => mesaModel.HoraAbertura)</td>
                     <td>
                         <a asp-page="./Edit" asp-route-id="@mesaModel.MesaId"> Modificar </a>
-                        <a asp-page="./Details" asp-route-id="@mesaModel.MesaId"> Visualizar </a>
+                        <a asp-page="./Details" asp-route-id="@mesaModel.MesaId"> Visualizar</a>
                         <a asp-page="./Delete" asp-route-id="@mesaModel.MesaId"> Remover </a>
                     </td>
+                    
                 </tr>
             }
+            <a asp-page="./Add"> Adicionar nova mesa</a>
         </tbody>
     </table>
 <a asp-page="./Create"> <strong>Cadastrar</strong></a>

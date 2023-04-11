@@ -3,11 +3,32 @@
 
 <h1>Detalhes do Garçom: @Model.GarconModel.Nome</h1>
 
-<div>
+<div class="info">
     <p><strong>Nome: </strong> @Model.GarconModel.Nome </p>
     <p><strong>Sobrenome: </strong> @Model.GarconModel.Sobrenome </p>
     <p><strong>CPF: </strong> @Model.GarconModel.Cpf </p>
     <p><strong>Telefone: </strong> @Model.GarconModel.Telefone </p>
 </div>
 
-<a asp-page="Index"> Voltar</a>
+<p style="text-align:center"><a class="btn btn-primary" role="button" asp-page="Index"> <strong>Voltar</strong></a></p>
+
+<style>
+
+    main{
+        
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .info{
+        width: 60vw;
+        text-align: left;
+        background-color: rgb(201, 201, 201);
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+</style>

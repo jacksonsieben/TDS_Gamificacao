@@ -10,19 +10,19 @@
             <input type="hidden" asp-for="MesaModel.MesaId"/>
             <div class="form-group">
                 <label asp-for="MesaModel.Numero"></label>
-                <input asp-for="MesaModel.Numero" class="form-control"/>
+                <input asp-for="MesaModel.Numero" value="" class="form-control"/>
                 <span asp-validation-for="MesaModel.Numero" class="text-dange"></span>
             </div>
             <br/>
             <div class="form-group">
-                <label asp-for="MesaModel.Status"></label>
-                <input asp-for="MesaModel.Status" class="form-control"></textarea>
-                <span asp-validation-for="MesaModel.Status" class="text-dange"></span>
+                <label asp-for="MesaModel.Status">A mesa está ocupada?</label> </br>
+                <input asp-for="MesaModel.Status" type="checkbox" value=true>
+                <span asp-validation-for="MesaModel.Status" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="MesaModel.HoraAbertura"></label>
+                <label asp-for="MesaModel.HoraAbertura">Hora de Abertura</label>
                 <input asp-for="MesaModel.HoraAbertura" class="form-control"/>
-                <span asp-validation-for="MesaModel.HoraAbertura" class="text-dange"></span>
+                <span asp-validation-for="MesaModel.HoraAbertura" class="text-danger"></span>
             </div>
             <br/>
             <div class="form-group">

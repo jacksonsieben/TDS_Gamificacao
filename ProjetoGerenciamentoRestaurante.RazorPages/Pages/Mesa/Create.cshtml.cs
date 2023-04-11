@@ -21,9 +21,16 @@ namespace ProjetoGerenciamentoRestaurante.RazorPages.Pages.Mesa
 
             if (MesaModel != null) _context.Mesa!.Add(MesaModel);
 
+            if(MesaModel.Status is false){MesaModel.HoraAbertura = null;}
+
             try{
+                if(MesaModel.Status && MesaModel.HoraAbertura is null){
+                    ModelState.AddModelError(string.Empty, "Insira uma data e hora para a abertura da mesa.");
+                    return Page();
+                }
+                else{
                 await _context.SaveChangesAsync();
-                return RedirectToPage("/Mesa/Index");
+                return RedirectToPage("/Mesa/Index");}
             } catch(DbUpdateException){
                 return Page();
             }

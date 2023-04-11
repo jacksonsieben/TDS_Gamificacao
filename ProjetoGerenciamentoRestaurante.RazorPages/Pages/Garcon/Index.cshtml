@@ -1,16 +1,16 @@
 @page
 @model ProjetoGerenciamentoRestaurante.RazorPages.Pages.Garcon.Index
 <h1>Garçons Cadastrados</h1>
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <div>
-    <table>
+    <table class="table table-bordered table-sm table-hover-custom">
         <thead>
             <tr>
-                <td>ID</td>
-                <td>@Html.DisplayNameFor(model => model.GarconList[0].Nome) </td>
-                <td>@Html.DisplayNameFor(model => model.GarconList[0].Sobrenome)</td>
-                <td>CPF</td>
-                <td>@Html.DisplayNameFor(model => model.GarconList[0].Telefone)</td>
+                <td scope="col">ID</td>
+                <td scope="col">@Html.DisplayNameFor(model => model.GarconList[0].Nome) </td>
+                <td scope="col">@Html.DisplayNameFor(model => model.GarconList[0].Sobrenome)</td>
+                <td scope="col">CPF</td>
+                <td scope="col">@Html.DisplayNameFor(model => model.GarconList[0].Telefone)</td>
             </tr>
         </thead>
         <tbody>
@@ -23,13 +23,13 @@
                     <td>@Html.DisplayFor(model => garconModel.Cpf)</td>
                     <td>@Html.DisplayFor(model => garconModel.Telefone)</td>
                     <td>
-                        <a asp-page="./Edit" asp-route-id="@garconModel.GarconId"> Modificar </a>
-                        <a asp-page="./Details" asp-route-id="@garconModel.GarconId"> Visualizar </a>
-                        <a asp-page="./Delete" asp-route-id="@garconModel.GarconId"> Remover </a>
+                        <a class="btn btn-sm btn-secondary active" asp-page="./Edit" asp-route-id="@garconModel.GarconId"> <i class="fa fa-pencil"></i>  </a>
+                        <a class="btn btn-secondary btn-sm btn-success" asp-page="./Details" asp-route-id="@garconModel.GarconId"> <i class="fa fa-eye"></i> </a>
+                        <a class="btn btn-secondary btn-sm btn-danger" asp-page="./Delete" asp-route-id="@garconModel.GarconId"> <i class="fa fa-trash"></i> </a>
                     </td>
                 </tr>
             }
         </tbody>
     </table>
-    <a asp-page="./Create"> <strong>Cadastrar</strong></a>
+<p style="text-align:center"><a class="btn btn-primary" role="button" asp-page="./Create"> <strong>Cadastrar</strong></a></p>
 </div>

@@ -1,14 +1,14 @@
 @page
 @model ProjetoGerenciamentoRestaurante.RazorPages.Pages.Atendimento.Index
 <h1>Produtos Cadastrados</h1>
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <div>
-    <table>
+    <table class="table table-bordered table-sm table-hover-custom">
         <thead>
             <tr>
-                <td>ID Atendimento</td>
-                <td>ID Mesa</td>
-                <td>Numero da Mesa</td>
+                <td scope="col">ID Atendimento</td>
+                <td scope="col">ID Mesa</td>
+                <td scope="col">Numero da Mesa</td>
             </tr>
         </thead>
         <tbody>
@@ -23,14 +23,14 @@
                         else{}
                     </td>                    
                     <td>
-                        <a asp-page="./" asp-route-id="@atendimentoModel.AtendimentoId"> Fechar Atendimento </a>
-                        <a asp-page="./Edit" asp-route-id="@atendimentoModel.AtendimentoId"> Modificar Atendimento</a>
-                        <a asp-page="./Details" asp-route-id="@atendimentoModel.AtendimentoId"> Visualizar Pedidos </a>
-                        <a asp-page="./Delete" asp-route-id="@atendimentoModel.AtendimentoId"> Remover </a>
+                        <a class="btn btn-sm btn-danger active" asp-page="./" asp-route-id="@atendimentoModel.AtendimentoId"> Fechar Atendimento </a>
+                        <a class="btn btn-sm btn-secondary active" asp-page="./Edit" asp-route-id="@atendimentoModel.AtendimentoId"> <i class="fa fa-pencil"></i></a>
+                        <a class="btn btn-sm btn-success active" asp-page="./Details" asp-route-id="@atendimentoModel.AtendimentoId"> <i class="fa fa-eye"></i> </a>
+                        <a class="btn btn-secondary btn-sm btn-danger" asp-page="./Delete" asp-route-id="@atendimentoModel.AtendimentoId"> <i class="fa fa-trash"></i> </a>
                     </td>
                 </tr>
             }
         </tbody>
     </table>
-<a asp-page="./Create"> <strong>Novo Atendimento</strong></a>
+<p style="text-align:center"><a class="btn btn-primary" role="button" asp-page="./Create"> <strong>Novo Atendimento</strong></a></p>
 </div>

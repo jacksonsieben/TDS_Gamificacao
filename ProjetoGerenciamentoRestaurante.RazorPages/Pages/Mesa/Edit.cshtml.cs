@@ -33,7 +33,7 @@ namespace ProjetoGerenciamentoRestaurante.RazorPages.Pages.Mesa
             if(!ModelState.IsValid){
                 return Page();
             }
-
+            
             var mesaToUpdate = await _context.Mesa!.FindAsync(id);
 
             if(mesaToUpdate == null){
@@ -50,8 +50,14 @@ namespace ProjetoGerenciamentoRestaurante.RazorPages.Pages.Mesa
             }
 
             try{
+                if(MesaModel.Status && MesaModel.HoraAbertura is null){
+                    ModelState.AddModelError(string.Empty, "Insira uma data e hora para a abertura da mesa.");
+                    return Page();
+                }
+                else{
                 await _context.SaveChangesAsync();
                 return RedirectToPage("/Mesa/Index");
+                }
             } catch(DbUpdateException){
                 return Page();
             }

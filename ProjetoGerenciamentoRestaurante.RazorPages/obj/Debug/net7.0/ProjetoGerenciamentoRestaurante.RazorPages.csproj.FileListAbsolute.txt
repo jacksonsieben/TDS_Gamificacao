@@ -128,3 +128,4 @@ C:\Users\rodri\OneDrive\Documentos\Programacao\TDS\ProjetoGamificao\TDS_Gamifica
 C:\Users\rodri\OneDrive\Documentos\Programacao\TDS\ProjetoGamificao\TDS_Gamificacao\ProjetoGerenciamentoRestaurante.RazorPages\obj\Debug\net7.0\ProjetoGerenciamentoRestaurante.RazorPages.pdb
 C:\Users\rodri\OneDrive\Documentos\Programacao\TDS\ProjetoGamificao\TDS_Gamificacao\ProjetoGerenciamentoRestaurante.RazorPages\obj\Debug\net7.0\ProjetoGerenciamentoRestaurante.RazorPages.genruntimeconfig.cache
 C:\Users\rodri\OneDrive\Documentos\Programacao\TDS\ProjetoGamificao\TDS_Gamificacao\ProjetoGerenciamentoRestaurante.RazorPages\obj\Debug\net7.0\ref\ProjetoGerenciamentoRestaurante.RazorPages.dll
+C:\Users\rodri\OneDrive\Documentos\Programacao\TDS\ProjetoGamificao\TDS_Gamificacao\ProjetoGerenciamentoRestaurante.RazorPages\bin\Debug\net7.0\ProjetoGerenciamentoRestaurante.RazorPages.staticwebassets.runtime.json

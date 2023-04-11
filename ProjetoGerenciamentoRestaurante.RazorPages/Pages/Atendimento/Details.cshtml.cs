@@ -30,7 +30,6 @@ namespace ProjetoGerenciamentoRestaurante.RazorPages.Pages.Atendimento
                     .ThenInclude(a => a.Mesa)
             .Include(p => p.Produto)
             .Where(e => e.Pedido.Atendimento.AtendimentoId == id)
-            // .FirstOrDefaultAsync(e => e.PedidoProdutoId == id)
             .ToListAsync();
 
 

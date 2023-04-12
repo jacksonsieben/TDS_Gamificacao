@@ -16,6 +16,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\rodri\OneDrive\Documentos\Programacao\TDS\ProjetoGamificao\TDS_Gamificacao\ProjetoGerenciamentoRestaurante.RazorPages
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/rodri/OneDrive/Documentos/Programacao/TDS/ProjetoGamificao/TDS_Gamificacao/ProjetoGerenciamentoRestaurante.RazorPages/Design/css.cshtml]
+build_metadata.AdditionalFiles.TargetPath = RGVzaWduXGNzcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/rodri/OneDrive/Documentos/Programacao/TDS/ProjetoGamificao/TDS_Gamificacao/ProjetoGerenciamentoRestaurante.RazorPages/Pages/Atendimento/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXRlbmRpbWVudG9cQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

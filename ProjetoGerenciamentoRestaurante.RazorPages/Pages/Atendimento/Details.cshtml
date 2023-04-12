@@ -3,15 +3,17 @@
 
 <h1>Atendimento: @Model.AtendimentoModel.AtendimentoId </h1>
 
-<div>
-    <strong>Mesa: </strong> @Model.AtendimentoModel.Mesa!.Numero</p>
+<div >
+    <h3><strong>Mesa: </strong> @Model.AtendimentoModel.Mesa!.Numero</p></h3>
     @if (Model.Pedido_ProdutoList.Any())
     {
-        <table>
+        <table >
         <thead>
             <tr>
                 <td><strong>Pedido</strong></td>
+                <td><strong>Valor Unitário</strong></td>
                 <td><strong>Quantidade</strong></td>
+                <td><strong>Valor</strong></td>
                 <td><strong>Garçom</strong></td>
                 <td><strong>Horario do Pedido</strong></td>
             </tr>
@@ -19,24 +21,28 @@
         <tbody>
             
                 @foreach (var item in Model.Pedido_ProdutoList)
-            { 
+            {
+                
                 <tr>
                     <td>@item.Produto!.Nome</td>
+                    <td>@item.Produto!.Preco</td>
                     <td>@item.Quantidade</td>
+                    <td>@(item.Produto!.Preco * item.Quantidade)</td>
                     <td>@item.Pedido!.Garcon!.Nome @item.Pedido.Garcon.Sobrenome</td>
                     <td>@item.Pedido.HorarioPedido</td>
                 </tr>
             }
         </tbody>
         </table>
-        <a class="btn btn-sm btn-danger active" asp-page="./" asp-route-id="@Model.AtendimentoModel.AtendimentoId"> Fechar Atendimento </a>
-    }
+        <h3 class="list-group-item list-group-item-success">Total: R$@Model.Pedido_ProdutoList.Sum(item => item.Produto!.Preco * item.Quantidade)</h3>
+        }
     else
     {
         <p><strong>Sem nenhum Pedido!!</strong></p>
     }
     @if (Model.AtendimentoModel.AtendimentoFechado is false)
     {
+        <a class="btn btn-sm btn-danger active" asp-page="./" asp-route-id="@Model.AtendimentoModel.AtendimentoId"> Fechar Atendimento </a>
         <a class="btn btn-sm btn-success active" asp-page="./" asp-route-id="@Model.AtendimentoModel.AtendimentoId"> Novo Pedido </a>
     }
     <a class="btn btn-sm btn-primary active" asp-page="Index"> Voltar </a>

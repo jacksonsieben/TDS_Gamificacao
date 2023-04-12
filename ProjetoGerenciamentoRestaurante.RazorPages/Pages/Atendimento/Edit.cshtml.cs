@@ -9,12 +9,12 @@ namespace ProjetoGerenciamentoRestaurante.RazorPages.Pages.Atendimento
     public class Edit : PageModel
     {
          private readonly AppDbContext _context;
-            [BindProperty]
-            public AtendimentoModel AtendimentoModel { get; set; } = new();
-            public MesaModel MesaModel { get; set; } = new();
-            public List<MesaModel> MesaList { get; set; } = new();
-            public Edit(AppDbContext context){
-                _context = context;
+        [BindProperty]
+        public AtendimentoModel AtendimentoModel { get; set; } = new();
+        public MesaModel MesaModel { get; set; } = new();
+        public List<MesaModel> MesaList { get; set; } = new();
+        public Edit(AppDbContext context){
+            _context = context;
         }
 
         public async Task<IActionResult> OnGetAsync(int? id){
@@ -63,11 +63,12 @@ namespace ProjetoGerenciamentoRestaurante.RazorPages.Pages.Atendimento
 
         
             try{
-                // bool mesaOcupada = await _context.Mesa!.AnyAsync(m => m.MesaId == AtendimentoModel.MesaId && m.Status);
-                // if (mesaOcupada) {
-                //     ModelState.AddModelError(string.Empty, "A mesa já está ocupada!");
-                //     return Page();
-                // }
+                bool mesaOcupada = await _context.Mesa!.AnyAsync(m => m.MesaId == AtendimentoModel.MesaId && m.Status);
+                if (mesaOcupada) {
+                    // ModelState.AddModelError(string.Empty, "A mesa já está ocupada!");
+                    TempData["Mensagem"] = "A mesa já está ocupada!!";
+                    return RedirectToPage("/Atendimento/Create");
+                }
                 _context.Update(mesaAntiga);
                 _context.Update(mesaNova);
                 _context.Update(atendimentoToUpdate);

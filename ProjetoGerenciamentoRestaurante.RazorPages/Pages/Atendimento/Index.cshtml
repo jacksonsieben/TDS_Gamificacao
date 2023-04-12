@@ -13,6 +13,8 @@
                 <td scope="col">ID Atendimento</td>
                 <td scope="col">Numero da Mesa</td>
                 <td scope="col">Atendimento Encerrado</td>
+                <td scope="col">Hora de Entrada</td>
+                <td scope="col">Hora da Saída</td>
             </tr>
         </thead>
         <tbody>
@@ -25,13 +27,10 @@
                         }
                         else{}
                     </td>  
-                    <td>@Html.DisplayFor(model => atendimentoModel.AtendimentoFechado)</td>                  
+                    <td>@Html.DisplayFor(model => atendimentoModel.AtendimentoFechado)</td>
+                    <td>@Html.DisplayFor(model => atendimentoModel.DataCriacao)</td>   
+                    <td>@Html.DisplayFor(model => atendimentoModel.DataSaida)</td>
                     <td>
-                        @if (atendimentoModel.AtendimentoFechado is false)
-                        {
-                            <a class="btn btn-sm btn-danger active" asp-page="./" asp-route-id="@atendimentoModel.AtendimentoId"> Fechar Atendimento </a>
-                        
-                        }
                         <a class="btn btn-sm btn-secondary active" asp-page="./Edit" asp-route-id="@atendimentoModel.AtendimentoId"> <i class="fa fa-pencil"></i></a>
                         <a class="btn btn-sm btn-success active" asp-page="./Details" asp-route-id="@atendimentoModel.AtendimentoId"> <i class="fa fa-eye"></i> </a>
                         <a class="btn btn-secondary btn-sm btn-danger" asp-page="./Delete" asp-route-id="@atendimentoModel.AtendimentoId"> <i class="fa fa-trash"></i> </a>

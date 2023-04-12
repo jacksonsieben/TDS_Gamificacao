@@ -46,10 +46,22 @@
     }
     @if (Model.AtendimentoModel.AtendimentoFechado is false)
     {
-        <a class="btn btn-sm btn-danger active" asp-page="./Close" asp-route-id="@Model.AtendimentoModel.AtendimentoId"> Fechar Atendimento </a>
-        <a class="btn btn-sm btn-success active" asp-page="./Pedido/Create" asp-route-id="@Model.AtendimentoModel.AtendimentoId"> Novo Pedido </a>
+        <form method="post">
+        <a class="btn btn-sm btn-success" asp-page="./Pedido/Create" asp-route-id="@Model.AtendimentoModel.AtendimentoId"> Novo Pedido </a>
+        <input type="submit" class="btn btn-sm btn-danger" value="Fechar Atendimento"/>
+        </form>
+    @* <a class="btn btn-sm btn-danger active" type="submit" asp-route-id="@Model.AtendimentoModel.AtendimentoId" value="Fechar Atendimento">Fechar Atendimento</a> *@
     }
-    <a class="btn btn-sm btn-primary active" asp-page="Index"> Voltar </a>
+    @if (Model.AtendimentoModel.AtendimentoFechado is true)
+    {
+        <form method="post">
+        @* <button type="submit" class="btn btn-sm btn-danger">Fechar Atendimento</button> *@
+        <input type="submit" class="btn btn-sm btn-primary" value="Abrir Atendimento"/>
+        </form>
+    @* <a class="btn btn-sm btn-danger active" type="submit" asp-route-id="@Model.AtendimentoModel.AtendimentoId" value="Fechar Atendimento">Fechar Atendimento</a> *@
+    }
+    <br>
+    <div aling="center"><a  class="btn btn-sm btn-primary" asp-page="Index"> Voltar </a></div>
 </div>
 
 <style>

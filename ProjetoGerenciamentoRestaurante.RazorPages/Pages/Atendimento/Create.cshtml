@@ -10,9 +10,9 @@
             <input type="hidden" asp-for="AtendimentoModel.AtendimentoId"/>
             <div class="form-group">
                 @if(TempData["Mensagem"] != null)
-{
-   <div class="alert alert-success">@TempData["Mensagem"]</div>
-}
+                {
+                <div class="alert alert-success">@TempData["Mensagem"]</div>
+                }
             <label asp-for="AtendimentoModel.MesaId">Numero da Mesa</label></br>
             <select asp-for="AtendimentoModel.MesaId" class="form-control">
                 <option value="">Selecione o número da Mesa</option>

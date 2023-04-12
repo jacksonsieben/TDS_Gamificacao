@@ -9,6 +9,7 @@ namespace ProjetoGerenciamentoRestaurante.RazorPages.Pages.Atendimento
     public class Details : PageModel
     {
         private readonly AppDbContext _context;
+        [BindProperty]
         public AtendimentoModel AtendimentoModel { get; set; } = new();
         
         public List<Pedido_ProdutoModel> Pedido_ProdutoList { get; set; } = new();
@@ -53,5 +54,56 @@ namespace ProjetoGerenciamentoRestaurante.RazorPages.Pages.Atendimento
 
             return Page();
         }
+
+        public async Task<IActionResult> OnPostAsync(int? id){
+            if(!ModelState.IsValid){
+                return Page();
+            }
+            var atendimentoToUpdate = await _context.Atendimento!.FindAsync(id);
+
+            if(atendimentoToUpdate == null){
+                return NotFound();
+            }
+            
+            if(atendimentoToUpdate.AtendimentoFechado){
+                var mesaAtualId = atendimentoToUpdate.MesaId;
+
+                atendimentoToUpdate.AtendimentoFechado = false;
+                atendimentoToUpdate.DataSaida = null;
+
+                var mesaAtual = await _context.Mesa!.FindAsync(mesaAtualId);
+                mesaAtual!.Status = true;
+                mesaAtual.HoraAbertura = DateTime.Now.AddHours(1);
+            
+                try{
+                    _context.Update(mesaAtual);
+                    _context.Update(atendimentoToUpdate);
+                    await _context.SaveChangesAsync();
+                    return RedirectToPage("/Atendimento/Index");
+                } catch(DbUpdateException){
+                    return Page();
+                }
+            }
+            else{
+                var mesaAtualId = atendimentoToUpdate.MesaId;
+
+                atendimentoToUpdate.AtendimentoFechado = true;
+                atendimentoToUpdate.DataSaida = DateTime.Now.AddHours(3);
+
+                var mesaAtual = await _context.Mesa!.FindAsync(mesaAtualId);
+                mesaAtual!.Status = false;
+                mesaAtual.HoraAbertura = null;
+            
+                try{
+                    _context.Update(mesaAtual);
+                    _context.Update(atendimentoToUpdate);
+                    await _context.SaveChangesAsync();
+                    return RedirectToPage("/Atendimento/Index");
+                } catch(DbUpdateException){
+                    return Page();
+                }
+            }
+        }
+
     }
 }

@@ -13,5 +13,8 @@ namespace ProjetoGerenciamentoRestaurante.RazorPages.Models
         public int MesaId { get; set; }
         public MesaModel? Mesa { get; set; }
         public bool AtendimentoFechado { get; set; }
+
+        public DateTime? DataCriacao { get; set; }
+        public DateTime? DataSaida { get; set; }
     }
 }

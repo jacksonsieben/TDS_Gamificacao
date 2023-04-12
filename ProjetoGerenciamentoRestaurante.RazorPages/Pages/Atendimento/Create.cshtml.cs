@@ -33,6 +33,7 @@ namespace ProjetoGerenciamentoRestaurante.RazorPages.Pages.Atendimento
                     TempData["Mensagem"] = "A mesa já está ocupada!!";
                     return RedirectToPage("/Atendimento/Create");
                 }
+                AtendimentoModel.DataCriacao = DateTime.Now;
 
                 var mesaToUpdate = await _context.Mesa!.FindAsync(AtendimentoModel.MesaId);
                 mesaToUpdate!.Status = true;

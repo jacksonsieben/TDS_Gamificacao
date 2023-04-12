@@ -1,9 +1,6 @@
 @page "{id:int}"
 @model ProjetoGerenciamentoRestaurante.RazorPages.Pages.Produto.Details
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
-<head>
-    <link rel="stylesheet" type="text/css" href="~/Design/Css.cshtml">
-</head>
 
 <h1>Detalhes do Produto:</h1>
 <h2> @Model.ProdutoModel.Nome</h2>
@@ -11,7 +8,25 @@
 <div class="info">
     <p><strong>Categoria: </strong> @Model.ProdutoModel.Categoria!.Nome </p>
     <p><strong>Descrição: </strong> @Model.ProdutoModel.Descricao </p>
-    <p><strong>Preço: R$</strong> @Model.ProdutoModel.Preco </p>
+    <p><strong>Valor Unitário: R$</strong> @Model.ProdutoModel.Preco </p>
 </div>
 
 <p style="text-align:center"><a class="btn btn-primary" role="button" asp-page="Index"> <strong>Voltar</strong></a></p>
+
+<style>
+    main{
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .info{
+        width: 60vw;
+        text-align: left;
+        background-color: rgb(201, 201, 201);
+        padding: 10px;
+        border-radius: 5px;
+    }
+</style>

@@ -10,7 +10,30 @@
 <h1>Gerenciador de Pedidos de Restaurante</h1>
 
 <div>
-    <a asp-page="/Atendimento/Create" class="btn btn-secondary"> Fazer Atendimento</a>
+    <a asp-page="/Atendimento/Create" class="btn btn-secondary"> Fazer Atendimento</a><p></p>
+    <table class="table table-bordered table-sm table-hover-custom">
+        <thead>
+            <tr>
+                <th scope="col">Nome</th>
+                <th scope="col">Pedidos Realizados</th>
+                <th scope="col">Total de Vendas</th>
+                <th scope="col">Quantidade de Produtos</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody> 
+            @foreach (var pedidoModel in Model.PedidoViewList)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(model => pedidoModel.Garcon!.Nome) @Html.DisplayFor(model => pedidoModel.Garcon!.Sobrenome)</td>
+                    <td>@Html.DisplayFor(model => pedidoModel.countPedidos)</td>
+                    <td>R$ @Html.DisplayFor(model => pedidoModel.totalVendas)</td>
+                    <td>@Html.DisplayFor(model => pedidoModel.quantidadeTotal)</td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
 </div>
 
 

@@ -41,13 +41,11 @@ namespace ProjetoGerenciamentoRestaurante.RazorPages.Pages
             }
             
             foreach (var p in PedidoList){
-                if (p.Atendimento!.AtendimentoFechado){
                     foreach (var v in PedidoViewList) {
                         if(p.GarconId == v.Garcon!.GarconId){
                             v.countPedidos += 1;
                         }
                     }
-                }
             }
 
             foreach (var p in PedidoProdutoList){

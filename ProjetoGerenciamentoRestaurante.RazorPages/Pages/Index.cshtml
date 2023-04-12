@@ -1,17 +1,10 @@
 @page
 @model ProjetoGerenciamentoRestaurante.RazorPages.Pages.Index
-<style>
 
-        *{
-            font-family: Georgia, 'Times New Roman', Times, serif;
-        }
-
-    </style> 
 <h1>Gerenciador de Pedidos de Restaurante</h1>
 
-<div>
+<div class="info">
     <div align="center">
-        <a asp-page="/Atendimento/Create" class="btn btn-success"> Fazer Atendimento</a><p></p>
     </div>
     <h3>Dashboard Garçons</h3>
     <table align="center" class="table table-bordered table-sm table-hover-custom">
@@ -21,7 +14,6 @@
                 <th scope="col">Pedidos Realizados</th>
                 <th scope="col">Total de Vendas</th>
                 <th scope="col">Quantidade de Produtos</th>
-                <th scope="col"></th>
             </tr>
         </thead>
         <tbody> 
@@ -35,9 +27,26 @@
                 </tr>
             }
         </tbody>
-
     </table>
+    <a asp-page="/Atendimento/Create" class="btn btn-success"> Fazer Atendimento</a><p></p>
 </div>
 
 
     
+<style>
+    main{
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .info{
+        width: 60vw;
+        text-align: center;
+        background-color: rgb(255, 255, 255);
+        padding: 10px;
+        border-radius: 5px;
+    }
+</style>

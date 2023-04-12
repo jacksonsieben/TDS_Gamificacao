@@ -47,7 +47,7 @@
     @if (Model.AtendimentoModel.AtendimentoFechado is false)
     {
         <form method="post">
-        <a class="btn btn-sm btn-success" asp-page="./Pedido/Create" asp-route-id="@Model.AtendimentoModel.AtendimentoId"> Novo Pedido </a>
+        <a class="btn btn-sm btn-success" asp-page="/Pedido/Create" asp-route-id="@Model.AtendimentoModel.AtendimentoId"> Novo Pedido </a>
         <input type="submit" class="btn btn-sm btn-danger" value="Fechar Atendimento"/>
         </form>
     @* <a class="btn btn-sm btn-danger active" type="submit" asp-route-id="@Model.AtendimentoModel.AtendimentoId" value="Fechar Atendimento">Fechar Atendimento</a> *@

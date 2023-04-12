@@ -1,11 +1,16 @@
-@page
+@page "{id:int}"
 @model ProjetoGerenciamentoRestaurante.RazorPages.Pages.Atendimento.Delete
-@{
-    ViewData["Title"] = "Delete";
-}
 
-<h1>@ViewData["Title"]</h1>
+<div align="center">
+    <h2>Deseja realmente remover esse atendimento?</h2>
 
-<div>
-    
+    <p><strong>Numero da Mesa:</strong> @Model.AtendimentoModel.Mesa!.Numero </p>
+
+
+<form method="post">
+    <div class="form-group">
+        <input type="submit" value="Sim" class="btn btn-danger"/>
+        <a asp-page="/Atendimento/Index" class="btn btn-primary"> Voltar</a>
+    </div>
+</form>
 </div>

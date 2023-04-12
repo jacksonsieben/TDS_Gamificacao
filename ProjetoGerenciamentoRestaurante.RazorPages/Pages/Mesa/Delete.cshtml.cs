@@ -43,8 +43,6 @@ namespace ProjetoGerenciamentoRestaurante.RazorPages.Pages.Mesa
             } catch(DbUpdateException){
                 return Page();
             }
-            
-            
         }
     }
 }

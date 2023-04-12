@@ -11,7 +11,6 @@ namespace ProjetoGerenciamentoRestaurante.RazorPages.Pages.Atendimento
          private readonly AppDbContext _context;
         [BindProperty]
         public AtendimentoModel AtendimentoModel { get; set; } = new();
-        public MesaModel MesaModel { get; set; } = new();
         public List<MesaModel> MesaList { get; set; } = new();
         public Create(AppDbContext context){
             _context = context;
@@ -30,8 +29,9 @@ namespace ProjetoGerenciamentoRestaurante.RazorPages.Pages.Atendimento
             try{
                 bool mesaOcupada = await _context.Mesa!.AnyAsync(m => m.MesaId == AtendimentoModel.MesaId && m.Status);
                 if (mesaOcupada) {
-                    ModelState.AddModelError(string.Empty, "A mesa já está ocupada!");
-                    return Page();
+                    // ModelState.AddModelError(string.Empty, "A mesa já está ocupada!");
+                    TempData["Mensagem"] = "A mesa já está ocupada!!";
+                    return RedirectToPage("/Atendimento/Create");
                 }
 
                 var mesaToUpdate = await _context.Mesa!.FindAsync(AtendimentoModel.MesaId);

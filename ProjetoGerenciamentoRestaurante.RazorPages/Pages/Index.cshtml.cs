@@ -14,13 +14,11 @@ namespace ProjetoGerenciamentoRestaurante.RazorPages.Pages
         public List<GarconModel>GarconList { get; set; } = new();
         public List<PedidoView>PedidoViewList { get; set; } = new();
         public List<Pedido_ProdutoModel>PedidoProdutoList { get; set; }
-
         
         public Index(AppDbContext context){
             _context = context;
         }
         public PedidoModel pedidoModel { get; set; } = new();
-
        
         public async Task<IActionResult> OnGetAsync(){
             PedidoList = await _context.Pedido!

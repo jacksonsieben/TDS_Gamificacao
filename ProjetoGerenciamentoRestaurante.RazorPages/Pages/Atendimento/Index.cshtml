@@ -1,5 +1,9 @@
 @page
 @model ProjetoGerenciamentoRestaurante.RazorPages.Pages.Atendimento.Index
+@if(TempData["Mensagem"] != null)
+{
+   <div class="alert alert-success">@TempData["Mensagem"]</div>
+}
 <h1>Atendimentos abertos:</h1>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <div>

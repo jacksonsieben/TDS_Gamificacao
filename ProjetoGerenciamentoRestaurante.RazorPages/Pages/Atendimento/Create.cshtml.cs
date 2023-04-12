@@ -36,7 +36,8 @@ namespace ProjetoGerenciamentoRestaurante.RazorPages.Pages.Atendimento
 
                 var mesaToUpdate = await _context.Mesa!.FindAsync(AtendimentoModel.MesaId);
                 mesaToUpdate!.Status = true;
-                mesaToUpdate.HoraAbertura = DateTime.Now.AddHours(2); 
+                mesaToUpdate.HoraAbertura = DateTime.Now.AddHours(2);
+                 
                 _context.Add(AtendimentoModel);
                 await _context.SaveChangesAsync();
                 return RedirectToPage("/Atendimento/Index");

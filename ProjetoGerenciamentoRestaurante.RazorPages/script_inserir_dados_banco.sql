@@ -388,8 +388,47 @@ insert into Pedido(
 SELECT 
 	(SELECT COALESCE(MAX(PedidoId),0) + 1 FROM Pedido)as PedidoId,
 	2 as AtendimentoId,
+	1 as GarconId,
+	time('21:35:57') as HorarioPedido
+;
+
+insert into Pedido(
+	PedidoId,
+	AtendimentoId,
+	GarconId,
+	HorarioPedido
+)
+SELECT 
+	(SELECT COALESCE(MAX(PedidoId),0) + 1 FROM Pedido)as PedidoId,
+	1 as AtendimentoId,
+	3 as GarconId,
+	time('21:35:57') as HorarioPedido
+;
+
+insert into Pedido(
+	PedidoId,
+	AtendimentoId,
+	GarconId,
+	HorarioPedido
+)
+SELECT 
+	(SELECT COALESCE(MAX(PedidoId),0) + 1 FROM Pedido)as PedidoId,
+	2 as AtendimentoId,
 	2 as GarconId,
 	time('20:47:23') as HorarioPedido
+;
+
+insert into Pedido(
+	PedidoId,
+	AtendimentoId,
+	GarconId,
+	HorarioPedido
+)
+SELECT 
+	(SELECT COALESCE(MAX(PedidoId),0) + 1 FROM Pedido)as PedidoId,
+	1 as AtendimentoId,
+	2 as GarconId,
+	time('19:47:23') as HorarioPedido
 ;
 
 insert into Pedido_Produto(
@@ -416,5 +455,57 @@ SELECT
 	2 as PedidoId,
 	6 AS ProdutoId,
 	7 as Quantidade
+;
+
+insert into Pedido_Produto(
+	PedidoProdutoId,
+	PedidoId,
+	ProdutoId,
+	Quantidade
+)
+SELECT 
+	(SELECT COALESCE(MAX(PedidoProdutoId),0) + 1 FROM Pedido_Produto)as PedidoProdutoId,
+	3 as PedidoId,
+	8 AS ProdutoId,
+	3 as Quantidade
+;
+
+insert into Pedido_Produto(
+	PedidoProdutoId,
+	PedidoId,
+	ProdutoId,
+	Quantidade
+)
+SELECT 
+	(SELECT COALESCE(MAX(PedidoProdutoId),0) + 1 FROM Pedido_Produto)as PedidoProdutoId,
+	4 as PedidoId,
+	1 AS ProdutoId,
+	1 as Quantidade
+;
+
+insert into Pedido_Produto(
+	PedidoProdutoId,
+	PedidoId,
+	ProdutoId,
+	Quantidade
+)
+SELECT 
+	(SELECT COALESCE(MAX(PedidoProdutoId),0) + 1 FROM Pedido_Produto)as PedidoProdutoId,
+	4 as PedidoId,
+	3 AS ProdutoId,
+	1 as Quantidade
+;
+
+insert into Pedido_Produto(
+	PedidoProdutoId,
+	PedidoId,
+	ProdutoId,
+	Quantidade
+)
+SELECT 
+	(SELECT COALESCE(MAX(PedidoProdutoId),0) + 1 FROM Pedido_Produto)as PedidoProdutoId,
+	5 as PedidoId,
+	8 AS ProdutoId,
+	3 as Quantidade
 ;
 

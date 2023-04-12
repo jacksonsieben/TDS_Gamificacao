@@ -9,7 +9,7 @@ Pré-requisitos
 - Visual Studio ou outra IDE de sua preferência;
 - SQLite o gerenciamento de banco de dados.
 <div alingn="center">
- <a> <img src="/Design/Image/Relacionamentos_BD.png" target="_blank"></a>
+ <a> <img src="ProjetoGerenciamentoRestaurante.RazorPages/Design/Image/Relacionamentos_BD.png" target="_blank"></a>
 </div>
 
 # Como rodar o projeto

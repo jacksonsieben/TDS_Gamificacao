@@ -1,5 +1,6 @@
 @page "{id:int}"
 @model ProjetoGerenciamentoRestaurante.RazorPages.Pages.Atendimento.Details
+@using System.Globalization
 
 <h1>Atendimento: @Model.AtendimentoModel.AtendimentoId </h1>
 
@@ -27,7 +28,7 @@
                     <td>@item.Produto!.Nome</td>
                     <td align="center">@item.Produto!.Preco</td>
                     <td align="center">@item.Quantidade</td>
-                    <td align="center">@(item.Produto!.Preco * item.Quantidade)</td>
+                    <td align="center">@((item.Produto!.Preco * item.Quantidade).ToString("F2", CultureInfo.GetCultureInfo("pt-BR")))</td>
                     <td align="center">@item.Pedido!.Garcon!.Nome @item.Pedido.Garcon.Sobrenome</td>
                     <td align="center">@item.Pedido.HorarioPedido</td>
                 </tr>
@@ -36,7 +37,7 @@
         </table>
         <br>
         <span class="d-inline-block" data-toggle="popover" data-content="Disabled popover">
-        <button class="btn btn-lg btn-success" style="pointer-events: none;" type="button" >Total: R$@Model.Pedido_ProdutoList.Sum(item => item.Produto!.Preco * item.Quantidade)</button>
+        <button class="btn btn-lg btn-success" style="pointer-events: none;" type="button" >Total: R$@Model.Pedido_ProdutoList.Sum(item => item.Produto!.Preco * item.Quantidade).ToString("F2", CultureInfo.GetCultureInfo("pt-BR"))</button>
         </span>
         <br><br>
         }

@@ -12,6 +12,8 @@ namespace ProjetoGerenciamentoRestaurante.RazorPages.Pages.Pedido
         public AtendimentoModel AtendimentoModel { get; set; } = new();
         [BindProperty]
         public PedidoModel PedidoModel { get; set; } = new();
+
+        [BindProperty]
         public Pedido_ProdutoModel Pedido_ProdutoModel { get; set; } = new();
         public List<GarconModel> GarconList { get; set; } = new();
         public List<ProdutoModel> ProdutoList { get; set; } = new();
@@ -22,10 +24,17 @@ namespace ProjetoGerenciamentoRestaurante.RazorPages.Pages.Pedido
         }
 
         public async Task<IActionResult> OnGetAsync(int? id){
-            var atendimentoModel = await _context.Atendimento!.FirstOrDefaultAsync(e => e.AtendimentoId == id);
+            if(id == null || _context.Atendimento == null){
+                return NotFound();
+            }
+
+            var atendimentoModel = await _context.Atendimento
+            .FirstOrDefaultAsync(e => e.AtendimentoId == id);
+
             if(atendimentoModel == null){
                 return NotFound();
             }
+
             AtendimentoModel = atendimentoModel;
 
             Pedido_ProdutoList = await _context.Pedido_Produto!.ToListAsync();
@@ -37,18 +46,22 @@ namespace ProjetoGerenciamentoRestaurante.RazorPages.Pages.Pedido
 
         public async Task<IActionResult> OnPostAsync(int? id){
             if(!ModelState.IsValid){
-                return Page();
+                return RedirectToAction("/Pedido/Create/"+id);
             }
 
             try{
                 _context.Pedido!.Add(PedidoModel);
 
                 await _context.SaveChangesAsync();
+
+                Pedido_ProdutoModel.PedidoId = PedidoModel.PedidoId;
+                _context.Pedido_Produto!.Add(Pedido_ProdutoModel);
+
+                await _context.SaveChangesAsync();
                 return RedirectToPage("/Atendimento/Index");
                 
             } catch(DbUpdateException){
-                // return Page();
-                return RedirectToPage("/Atendimento/Index");
+                return RedirectToAction("/Pedido/Create/"+id);
             }
         }
     }

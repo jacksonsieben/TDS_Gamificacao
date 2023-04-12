@@ -6,81 +6,52 @@
 <div class="row">
     <div class="col-md-4">
         <form method="post">
-            <div asp-validation-summary="ModelOnly" class="text-dange"></div>
-            <div class="row">
-                <div class="form-row">
-                        <label asp-for="AtendimentoModel.AtendimentoId">Número do Atendimento</label>
-                        <input asp-for="AtendimentoModel.AtendimentoId" value="@Model.AtendimentoModel.AtendimentoId" class="form-control" disabled/>
-                        <span asp-validation-for="AtendimentoModel.AtendimentoId" class="text-dange"></span>
+            <div asp-validation-summary="ModelOnly" class="text-dange"> </div>
+            <input type="hidden" asp-for="PedidoModel.PedidoId"/>
 
-                        <label >Nome do Garçom</label></br>
-                        <select class="form-control">
-                        <option value="">Selecione um Garçom</option>
-                        @foreach (var garconModel in Model.GarconList)
+            <label asp-for="PedidoModel.AtendimentoId">Número do Atendimento</label>
+            <input asp-for="PedidoModel.AtendimentoId" value="@Model.AtendimentoModel.AtendimentoId" class="form-control"/>
+            <span asp-validation-for="PedidoModel.AtendimentoId" class="text-danger"></span>
+
+            <label >Nome do Garçom</label></br>
+            <select class="form-control" asp-for="PedidoModel.GarconId">
+            <option value="">Selecione um Garçom</option>
+            @foreach (var garconModel in Model.GarconList)
+            {
+                <option value="@garconModel.GarconId">@garconModel.Nome @garconModel.Sobrenome</option>
+            }
+            </select>
+
+            <label asp-for="PedidoModel.HorarioPedido">Hora do Pedido</label>
+            <input asp-for="PedidoModel.HorarioPedido" class="form-control" value=null />
+            <span asp-validation-for="PedidoModel.HorarioPedido" class="text-danger"></span>
+
+            <div class="row">
+                <div class="col col-md-9">
+                    <label>Qual o produto?</label></br>
+                    <select class="form-control" asp-for="Pedido_ProdutoModel.ProdutoId">
+                        <option value="">Selecione</option>
+                        @foreach (var produtoModel in Model.ProdutoList)
                         {
-                            <option value="@garconModel.GarconId">@garconModel.Nome @garconModel.Sobrenome</option>
+                            <option value="@produtoModel.ProdutoId">@produtoModel.Nome - R$@produtoModel.Preco</option>
                         }
-                        </select>
-                    </div>
-                     @* <div class="row">
-                        <div class="col">
-                            <label>Qual Produto?</label><br>
-                            <select class="form-control" id="produto">
-                                <option value="">Selecione o produto</option>
-                                @foreach (var produtoModel in Model.ProdutoList)
-                                {
-                                    <option value="@produtoModel.ProdutoId">@produtoModel.Nome - R$@produtoModel.Preco</option>
-                                }
-                            </select>
-                        </div>
-                        <div class="col">
-                            <label asp-for="Pedido_ProdutoModel.Quantidade"></label>
-                            <input asp-for="Pedido_ProdutoModel.Quantidade" type="number" value="1" class="form-control"/>
-                            <span asp-validation-for="Pedido_ProdutoModel.Quantidade" class="text"></span>
-                        </div>
-                            <div id="maisProdutos"></div>
-                        </div>
-                        <button type="button" class="btn btn-primary" id="adicionarProduto">Adicionar outro produto</button> *@
-                    
-                        <div class="col col-md-9">
-                            <label>Qual o produto?</label></br>
-                                <select class="form-control">
-                                    <option value="">Selecione</option>
-                                    @foreach (var produtoModel in Model.ProdutoList)
-                                    {
-                                        <option value="@produtoModel.ProdutoId">@produtoModel.Nome - R$@produtoModel.Preco</option>
-                                    }
-                                </select>
-                        </div>
-                        <div class="col col-md-3">
-                            <label asp-for="Pedido_ProdutoModel.Quantidade"></label>
-                            <input asp-for="Pedido_ProdutoModel.Quantidade" type="number" value="1" class="form-control"/>
-                            <span asp-validation-for="Pedido_ProdutoModel.Quantidade" class="text-dange"></span>
-                        </div>
-                        <br/>
-                    <div class="form-group">
-                        <br>
-                        <input type="submit" class="btn btn-primary" value="Salvar"/>
-                        <a asp-page="/Atendimento/Details" asp-route-id="@Model.AtendimentoModel.AtendimentoId" class="btn btn-secondary"> Cancelar</a>
-                    </div>
+                    </select>
+                </div>
+                <div class="col col-md-3">
+                    <label asp-for="Pedido_ProdutoModel.Quantidade"></label>
+                    <input asp-for="Pedido_ProdutoModel.Quantidade" type="number" value="1" class="form-control"/>
+                    <span asp-validation-for="Pedido_ProdutoModel.Quantidade" class="text-dange"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <br>
+                <input type="submit" class="btn btn-primary" value="Salvar"/>
+                <a asp-page="/Atendimento/Details" asp-route-id="@Model.AtendimentoModel.AtendimentoId" class="btn btn-secondary"> Cancelar</a>
+            </div>
+
+            <div class="form-group">
+
         </form>
     </div>
 </div>
-
-
-@* <script>
-    var contador = 1;
-
-    document.getElementById("adicionarProduto").addEventListener("click", function(){
-        var div = document.createElement("div");
-        div.innerHTML = `<select class="form-control" id="produto${contador}">
-                            <option value="">Selecione o produto</option>
-                            @foreach (var produtoModel in Model.ProdutoList)
-                            {
-                                <option value="@produtoModel.ProdutoId">@produtoModel.Nome - R$@produtoModel.Preco</option>
-                            }
-                        </select>`;
-        document.getElementById("maisProdutos").appendChild(div);
-        contador++;
-    });
-</script> *@

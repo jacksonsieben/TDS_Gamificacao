@@ -1,5 +1,6 @@
 @page
 @model ProjetoGerenciamentoRestaurante.RazorPages.Pages.Index
+@using System.Globalization
 
 <h1>Gerenciador de Pedidos de Restaurante</h1>
 
@@ -22,7 +23,7 @@
                 <tr>
                     <td>@Html.DisplayFor(model => pedidoModel.Garcon!.Nome) @Html.DisplayFor(model => pedidoModel.Garcon!.Sobrenome)</td>
                     <td>@Html.DisplayFor(model => pedidoModel.countPedidos)</td>
-                    <td>R$ @Html.DisplayFor(model => pedidoModel.totalVendas)</td>
+                    <td>R$ @(pedidoModel.totalVendas.ToString("F2"))</td>
                     <td>@Html.DisplayFor(model => pedidoModel.quantidadeTotal)</td>
                 </tr>
             }

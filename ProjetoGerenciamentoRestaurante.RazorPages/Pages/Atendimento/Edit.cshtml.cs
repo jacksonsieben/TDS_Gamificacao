@@ -9,8 +9,7 @@ namespace ProjetoGerenciamentoRestaurante.RazorPages.Pages.Atendimento
     public class Edit : PageModel
     {
          private readonly AppDbContext _context;
-        [BindProperty]
-
+            [BindProperty]
             public AtendimentoModel AtendimentoModel { get; set; } = new();
             public List<MesaModel> MesaList { get; set; } = new();
             public Edit(AppDbContext context){
@@ -58,8 +57,6 @@ namespace ProjetoGerenciamentoRestaurante.RazorPages.Pages.Atendimento
             } catch(DbUpdateException){
                 return Page();
             }
-            
-            
         }
     }
 }

@@ -7,7 +7,6 @@
         <thead>
             <tr>
                 <td scope="col">ID Atendimento</td>
-                <td scope="col">ID Mesa</td>
                 <td scope="col">Numero da Mesa</td>
                 <td scope="col">Atendimento Encerrado</td>
             </tr>
@@ -17,7 +16,6 @@
             {
                 <tr>
                     <td>@Html.DisplayFor(model => atendimentoModel.AtendimentoId)</td>
-                    <td>@Html.DisplayFor(model => atendimentoModel.MesaId)</td>
                     <td>@if (atendimentoModel.Mesa != null){
                             @Html.DisplayFor(model => atendimentoModel.Mesa.Numero)
                         }

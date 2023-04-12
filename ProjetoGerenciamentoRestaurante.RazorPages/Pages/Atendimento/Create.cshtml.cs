@@ -11,6 +11,7 @@ namespace ProjetoGerenciamentoRestaurante.RazorPages.Pages.Atendimento
          private readonly AppDbContext _context;
         [BindProperty]
         public AtendimentoModel AtendimentoModel { get; set; } = new();
+        public MesaModel MesaModel { get; set; } = new();
         public List<MesaModel> MesaList { get; set; } = new();
         public Create(AppDbContext context){
             _context = context;
@@ -33,6 +34,9 @@ namespace ProjetoGerenciamentoRestaurante.RazorPages.Pages.Atendimento
                     return Page();
                 }
 
+                var mesaToUpdate = await _context.Mesa!.FindAsync(AtendimentoModel.MesaId);
+                mesaToUpdate!.Status = true;
+                mesaToUpdate.HoraAbertura = DateTime.Now.AddHours(2); 
                 _context.Add(AtendimentoModel);
                 await _context.SaveChangesAsync();
                 return RedirectToPage("/Atendimento/Index");

@@ -23,6 +23,15 @@ namespace ProjetoGerenciamentoRestaurante.RazorPages.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
+                    b.Property<bool>("AtendimentoFechado")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime?>("DataCriacao")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime?>("DataSaida")
+                        .HasColumnType("TEXT");
+
                     b.Property<int>("MesaId")
                         .HasColumnType("INTEGER");
 
@@ -123,7 +132,7 @@ namespace ProjetoGerenciamentoRestaurante.RazorPages.Migrations
                     b.ToTable("Pedido", (string)null);
                 });
 
-            modelBuilder.Entity("ProjetoGerenciamentoRestaurante.RazorPages.Models.Pedido_Produto", b =>
+            modelBuilder.Entity("ProjetoGerenciamentoRestaurante.RazorPages.Models.Pedido_ProdutoModel", b =>
                 {
                     b.Property<int>("PedidoProdutoId")
                         .ValueGeneratedOnAdd()
@@ -204,7 +213,7 @@ namespace ProjetoGerenciamentoRestaurante.RazorPages.Migrations
                     b.Navigation("Garcon");
                 });
 
-            modelBuilder.Entity("ProjetoGerenciamentoRestaurante.RazorPages.Models.Pedido_Produto", b =>
+            modelBuilder.Entity("ProjetoGerenciamentoRestaurante.RazorPages.Models.Pedido_ProdutoModel", b =>
                 {
                     b.HasOne("ProjetoGerenciamentoRestaurante.RazorPages.Models.PedidoModel", "Pedido")
                         .WithMany()

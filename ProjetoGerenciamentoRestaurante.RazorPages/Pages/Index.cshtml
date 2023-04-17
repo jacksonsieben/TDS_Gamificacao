@@ -1,7 +1,53 @@
 @page
 @model ProjetoGerenciamentoRestaurante.RazorPages.Pages.Index
+@using System.Globalization
+
 <h1>Gerenciador de Pedidos de Restaurante</h1>
 
-<div>
-    <a asp-page="/Atendimento/Index" class="btn btn-secondary"> Fazer Atendimento</a>
+<div class="info">
+    <div align="center">
+    </div>
+        <h3>Dashboard Garçons</h3>
+        <table align="center" class="table table-bordered table-sm table-hover-custom">
+            <thead>
+                <tr>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Pedidos Realizados</th>
+                    <th scope="col">Total de Vendas</th>
+                    <th scope="col">Quantidade de Produtos</th>
+                </tr>
+            </thead>
+            <tbody> 
+                @foreach (var pedidoModel in Model.PedidoViewList)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(model => pedidoModel.Garcon!.Nome) @Html.DisplayFor(model => pedidoModel.Garcon!.Sobrenome)</td>
+                        <td>@Html.DisplayFor(model => pedidoModel.countPedidos)</td>
+                        <td>R$ @(pedidoModel.totalVendas.ToString("F2"))</td>
+                        <td>@Html.DisplayFor(model => pedidoModel.quantidadeTotal)</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <a asp-page="/Atendimento/Create" class="btn btn-success"> Fazer Atendimento</a><p></p>
 </div>
+
+
+    
+<style>
+    main{
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .info{
+        width: 60vw;
+        text-align: center;
+        background-color: rgb(255, 255, 255);
+        padding: 10px;
+        border-radius: 5px;
+    }
+</style>

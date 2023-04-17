@@ -1,0 +1,62 @@
+@page
+@model ProjetoGerenciamentoRestaurante.RazorPages.Pages.Atendimento.Index
+@if(TempData["Mensagem"] != null)
+{
+   <div class="alert alert-success">@TempData["Mensagem"]</div>
+}
+<h1>Atendimentos abertos:</h1>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div >
+    <table class="table table-bordered table-sm table-hover-custom">
+        <thead>
+            <tr>
+                <td scope="col">ID Atendimento</td>
+                <td scope="col">Numero da Mesa</td>
+                <td scope="col">Atendimento Encerrado</td>
+                <td scope="col">Hora de Entrada</td>
+                <td scope="col">Hora da Saída</td>
+                <td scope="col"></td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var atendimentoModel in Model.AtendimentoList)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(model => atendimentoModel.AtendimentoId)</td>
+                    <td>@if (atendimentoModel.Mesa != null){
+                            @Html.DisplayFor(model => atendimentoModel.Mesa.Numero)
+                        }
+                        else{}
+                    </td>  
+                    <td>@Html.DisplayFor(model => atendimentoModel.AtendimentoFechado)</td>
+                    <td>@Html.DisplayFor(model => atendimentoModel.DataCriacao)</td>   
+                    <td>@Html.DisplayFor(model => atendimentoModel.DataSaida)</td>
+                    <td>
+                        <a class="btn btn-sm btn-secondary active" asp-page="./Edit" asp-route-id="@atendimentoModel.AtendimentoId"> <i class="fa fa-pencil"></i></a>
+                        <a class="btn btn-sm btn-success active" asp-page="./Details" asp-route-id="@atendimentoModel.AtendimentoId"> <i class="fa fa-eye"></i> </a>
+                        <a class="btn btn-secondary btn-sm btn-danger" asp-page="./Delete" asp-route-id="@atendimentoModel.AtendimentoId"> <i class="fa fa-trash"></i> </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+<p style="text-align:center"><a class="btn btn-primary" role="button" asp-page="./Create"> <strong>Novo Atendimento</strong></a></p>
+</div>
+
+<style>
+    main{
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .info{
+        width: 60vw;
+        text-align: center;
+        background-color: rgb(255, 255, 255);
+        padding: 10px;
+        border-radius: 5px;
+    }
+</style>

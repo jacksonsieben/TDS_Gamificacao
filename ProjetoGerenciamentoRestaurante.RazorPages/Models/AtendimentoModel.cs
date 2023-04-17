@@ -12,5 +12,9 @@ namespace ProjetoGerenciamentoRestaurante.RazorPages.Models
         [ForeignKey("Mesa")]
         public int MesaId { get; set; }
         public MesaModel? Mesa { get; set; }
+        public bool AtendimentoFechado { get; set; }
+
+        public DateTime? DataCriacao { get; set; }
+        public DateTime? DataSaida { get; set; }
     }
 }

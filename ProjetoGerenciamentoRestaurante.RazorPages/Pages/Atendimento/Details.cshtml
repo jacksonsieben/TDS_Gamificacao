@@ -1,0 +1,84 @@
+@page "{id:int}"
+@model ProjetoGerenciamentoRestaurante.RazorPages.Pages.Atendimento.Details
+@using System.Globalization
+
+<h1>Atendimento: @Model.AtendimentoModel.AtendimentoId </h1>
+
+<div class="info">
+    <h3><strong>Mesa: </strong> @Model.AtendimentoModel.Mesa!.Numero</p></h3>
+    @if (Model.Pedido_ProdutoList.Any())
+    {
+        <table >
+        <thead>
+            <tr>
+                <td align="center"><strong>Pedido</strong></td>
+                <td align="center"><strong>Valor Unitário</strong></td>
+                <td align="center"><strong>Quantidade</strong></td>
+                <td align="center"><strong>Valor</strong></td>
+                <td align="center"><strong>Garçom</strong></td>
+                <td align="center"><strong>Horario do Pedido</strong></td>
+            </tr>
+        </thead>
+        <tbody>
+            
+                @foreach (var item in Model.Pedido_ProdutoList)
+            {
+                
+                <tr>
+                    <td>@item.Produto!.Nome</td>
+                    <td align="center">@item.Produto!.Preco</td>
+                    <td align="center">@item.Quantidade</td>
+                    <td align="center">@((item.Produto!.Preco * item.Quantidade).ToString("F2", CultureInfo.GetCultureInfo("pt-BR")))</td>
+                    <td align="center">@item.Pedido!.Garcon!.Nome @item.Pedido.Garcon.Sobrenome</td>
+                    <td align="center">@item.Pedido.HorarioPedido</td>
+                </tr>
+            }
+        </tbody>
+        </table>
+        <br>
+        <span class="d-inline-block" data-toggle="popover" data-content="Disabled popover">
+        <button class="btn btn-lg btn-success" style="pointer-events: none;" type="button" >Total: R$@Model.Pedido_ProdutoList.Sum(item => item.Produto!.Preco * item.Quantidade).ToString("F2", CultureInfo.GetCultureInfo("pt-BR"))</button>
+        </span>
+        <br><br>
+        }
+    else
+    {
+        <p><strong>Sem nenhum Pedido!!</strong></p>
+    }
+    @if (Model.AtendimentoModel.AtendimentoFechado is false)
+    {
+        <form method="post">
+        <a class="btn btn-sm btn-success" asp-page="/Pedido/Create" asp-route-id="@Model.AtendimentoModel.AtendimentoId"> Novo Pedido </a>
+        <input type="submit" class="btn btn-sm btn-danger" value="Fechar Atendimento"/>
+        </form>
+    @* <a class="btn btn-sm btn-danger active" type="submit" asp-route-id="@Model.AtendimentoModel.AtendimentoId" value="Fechar Atendimento">Fechar Atendimento</a> *@
+    }
+    @if (Model.AtendimentoModel.AtendimentoFechado is true)
+    {
+        <form method="post">
+        @* <button type="submit" class="btn btn-sm btn-danger">Fechar Atendimento</button> *@
+        <input type="submit" class="btn btn-sm btn-primary" value="Abrir Atendimento"/>
+        </form>
+    @* <a class="btn btn-sm btn-danger active" type="submit" asp-route-id="@Model.AtendimentoModel.AtendimentoId" value="Fechar Atendimento">Fechar Atendimento</a> *@
+    }
+    <br>
+    <div aling="center"><a  class="btn btn-sm btn-primary" asp-page="Index"> Voltar </a></div>
+</div>
+
+<style>
+    main{
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .info{
+        width: 60vw;
+        text-align: left;
+        background-color: rgb(201, 201, 201);
+        padding: 10px;
+        border-radius: 5px;
+    }
+</style>

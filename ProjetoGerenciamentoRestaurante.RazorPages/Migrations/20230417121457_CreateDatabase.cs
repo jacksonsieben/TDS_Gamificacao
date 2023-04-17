@@ -84,7 +84,10 @@ namespace ProjetoGerenciamentoRestaurante.RazorPages.Migrations
                 {
                     AtendimentoId = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    MesaId = table.Column<int>(type: "INTEGER", nullable: false)
+                    MesaId = table.Column<int>(type: "INTEGER", nullable: false),
+                    AtendimentoFechado = table.Column<bool>(type: "INTEGER", nullable: false),
+                    DataCriacao = table.Column<DateTime>(type: "TEXT", nullable: true),
+                    DataSaida = table.Column<DateTime>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {

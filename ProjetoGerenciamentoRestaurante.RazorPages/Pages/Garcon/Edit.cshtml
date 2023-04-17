@@ -1,7 +1,6 @@
 @page "{id:int}"
 @model ProjetoGerenciamentoRestaurante.RazorPages.Pages.Garcon.Edit
 
-
 <h1>Alterar Dados do Garçom</h1>
 
 <hr/>
@@ -23,15 +22,15 @@
             </div>
             <br/>
             <div class="form-group">
-                <label asp-for="GarconModel.Cpf"></label>
+                CPF</label>
                 <input asp-for="GarconModel.Cpf" class="form-control"/>
-                <span asp-validation-for="GarconModel.Cpf" class="text-dange"></span>
+                <span asp-validation-for="GarconModel.Cpf" type="number" class="text-dange"></span>
             </div>
             <br/>
             <div class="form-group">
                 <label asp-for="GarconModel.Telefone"></label>
                 <input asp-for="GarconModel.Telefone" class="form-control"/>
-                <span asp-validation-for="GarconModel.Telefone" class="text-dange"></span>
+                <span asp-validation-for="GarconModel.Telefone" type="number" class="text-dange"></span>
             </div>
             <br/>
             <div class="form-group">

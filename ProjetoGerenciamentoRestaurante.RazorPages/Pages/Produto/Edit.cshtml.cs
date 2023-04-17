@@ -10,10 +10,12 @@ namespace ProjetoGerenciamentoRestaurante.RazorPages.Pages.Produto
     {
         private readonly AppDbContext _context;
         [BindProperty]
+        public ProdutoModel ProdutoModel { get; set; } = new();
 
-            public ProdutoModel ProdutoModel { get; set; } = new();
-            public Edit(AppDbContext context){
-                _context = context;
+        public List<CategoriaModel> CategoriaList { get; set; } = new();
+
+        public Edit(AppDbContext context){
+            _context = context;
         }
 
         public async Task<IActionResult> OnGetAsync(int? id){
@@ -25,14 +27,17 @@ namespace ProjetoGerenciamentoRestaurante.RazorPages.Pages.Produto
             .Include(p => p.Categoria)
             .FirstOrDefaultAsync(e => e.ProdutoId == id);
 
-            var categoriaModel = await _context.Categoria.ToListAsync();
-
             if(produtoModel == null){
                 return NotFound();
             }
             ProdutoModel = produtoModel;
-            ViewBag.Categorias = categoriaModel;
+
+            /*##################*/
+            var categoria = CategoriaList.FirstOrDefault(c => c.CategoriaId == ProdutoModel.CategoriaId);
             
+            CategoriaList = await _context.Categoria!.ToListAsync();
+            
+
             return Page();
         }
 

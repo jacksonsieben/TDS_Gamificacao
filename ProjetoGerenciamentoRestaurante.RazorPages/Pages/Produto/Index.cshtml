@@ -1,16 +1,17 @@
 @page
 @model ProjetoGerenciamentoRestaurante.RazorPages.Pages.Produto.Index
 <h1>Produtos Cadastrados</h1>
-
-<div>
-    <table>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="info">
+    <table class="table table-bordered table-sm table-hover-custom">
         <thead>
             <tr>
-                <td>ID Produto</td>
-                <td>Categoria</td>
-                <td>@Html.DisplayNameFor(model => model.ProdutoList[0].Nome) </td>
-                <td>@Html.DisplayNameFor(model => model.ProdutoList[0].Descricao)</td>
-                <td>@Html.DisplayNameFor(model => model.ProdutoList[0].Preco)</td>
+                <td scope="col">ID Produto</td>
+                <td scope="col">Categoria</td>
+                <td scope="col">@Html.DisplayNameFor(model => model.ProdutoList[0].Nome) </td>
+                <td scope="col">@Html.DisplayNameFor(model => model.ProdutoList[0].Descricao)</td>
+                <td scope="col">@Html.DisplayNameFor(model => model.ProdutoList[0].Preco)</td>
+                <td scope="col"></td>
             </tr>
         </thead>
         <tbody>
@@ -28,12 +29,44 @@
                     <td>@Html.DisplayFor(model => produtoModel.Preco)</td>
                     
                     <td>
-                        <a asp-page="./Edit" asp-route-id="@produtoModel.ProdutoId"> Modificar </a>
-                        <a asp-page="./Details" asp-route-id="@produtoModel.ProdutoId"> Visualizar </a>
-                        <a asp-page="./Delete" asp-route-id="@produtoModel.ProdutoId"> Remover </a>
+                        <a class="btn btn-sm btn-secondary active" asp-page="./Edit" asp-route-id="@produtoModel.ProdutoId"> <i class="fa fa-pencil"></i> </a>
+                        <a class="btn btn-secondary btn-sm btn-success" asp-page="./Details" asp-route-id="@produtoModel.ProdutoId"> <i class="fa fa-eye"></i> </a>
+                        <a class="btn btn-secondary btn-sm btn-danger" asp-page="./Delete" asp-route-id="@produtoModel.ProdutoId"> <i class="fa fa-trash"></i> </a>
                     </td>
                 </tr>
             }
         </tbody>
     </table>
+    <style>
+
+        </style>
+<p style="text-align:center"><a class="btn btn-primary" role="button" asp-page="./Create"> <strong>Cadastrar</strong></a></p>
 </div>
+
+
+
+<style>
+    main{
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    tbody tr td:last-child{
+        idth: 10vw;
+    }
+
+    tbody tr td:not(:nth-child(4)){
+        text-align: center;
+    }
+
+    .info{
+        width: 80vw;
+        text-align: center;
+        background-color: rgb(255, 255, 255);
+        padding: 10px;
+        border-radius: 5px;
+    }
+</style>

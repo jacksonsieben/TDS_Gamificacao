@@ -1,6 +1,6 @@
 @page
 @model ProjetoGerenciamentoRestaurante.RazorPages.Pages.Garcon.Create
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
 <h1>Cadastrar Dados do Garçom</h1>
 
 <hr/>
@@ -23,13 +23,13 @@
             <br/>
             <div class="form-group">
                 <label>CPF</label>
-                <input asp-for="GarconModel.Cpf" type="number" max="99999999999" class="form-control"/>
+                <input asp-for="GarconModel.Cpf" type="number" maxlength="14" class="form-control" onkeyup="handleCPF(event)"/>
                 <span asp-validation-for="GarconModel.Cpf" class="text-dange"></span>
             </div>
             <br/>
             <div class="form-group">
                 <label asp-for="GarconModel.Telefone"></label>
-                <input asp-for="GarconModel.Telefone"  type="number" class="form-control"/>
+                <input asp-for="GarconModel.Telefone" class="form-control" maxlength="15" onkeyup="handlePhone(event)"/>
                 <span asp-validation-for="GarconModel.Telefone" class="text-dange"></span>
             </div>
             <br/>
@@ -40,3 +40,37 @@
         </form>
     </div>
 </div>
+
+@section Scripts
+{
+<script>
+    const handlePhone = (event) => {
+        let input = event.target
+        input.value = phoneMask(input.value)
+    }
+
+    const phoneMask = (value) => {
+        if (!value) return ""
+        value = value.replace(/\D/g, '')
+        value = value.replace(/(\d{2})(\d)/, "($1) $2")
+        value = value.replace(/(\d)(\d{4})$/, "$1-$2")
+        return value
+    }
+
+    const handleCPF = (event) => {
+        let input = event.target
+        input.value = cpfMask(input.value)
+    }
+
+    const cpfMask = (value) => {
+        if (!value) return ""
+        value = value.replace(/\D/g, '')
+        value = value.replace(/(\d{3})(\d)/, "$1.$2")
+        value = value.replace(/(\d{3})(\d)/, "$1.$2")
+        value = value.replace(/(\d)(\d{2})$/, "$1-$2")
+        return value
+    }
+
+
+</script>
+}

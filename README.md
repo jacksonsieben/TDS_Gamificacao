@@ -8,11 +8,8 @@ Pré-requisitos
 
 - Visual Studio ou outra IDE de sua preferência;
 - SQLite o gerenciamento de banco de dados.
-<<<<<<< HEAD
 
 # Relacionamento do banco de Dados
-=======
->>>>>>> bc2e163dd4269238490085dfda7dc9fc5c0ff17e
 <div alingn="center">
  <a> <img src="ProjetoGerenciamentoRestaurante.RazorPages/Design/Image/Relacionamentos_BD.png" target="_blank"></a>
 </div>

@@ -7,6 +7,7 @@
 <div class="info">
     <div align="center">
     </div>
+<<<<<<< HEAD
         <h3>Dashboard Garçons</h3>
         <table align="center" class="table table-bordered table-sm table-hover-custom">
             <thead>
@@ -30,6 +31,31 @@
             </tbody>
         </table>
         <a asp-page="/Atendimento/Create" class="btn btn-success"> Fazer Atendimento</a><p></p>
+=======
+    <h3>Dashboard Garçons</h3>
+    <table align="center" class="table table-bordered table-sm table-hover-custom">
+        <thead>
+            <tr>
+                <th scope="col">Nome</th>
+                <th scope="col">Pedidos Realizados</th>
+                <th scope="col">Total de Vendas</th>
+                <th scope="col">Quantidade de Produtos</th>
+            </tr>
+        </thead>
+        <tbody> 
+            @foreach (var pedidoModel in Model.PedidoViewList)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(model => pedidoModel.Garcon!.Nome) @Html.DisplayFor(model => pedidoModel.Garcon!.Sobrenome)</td>
+                    <td>@Html.DisplayFor(model => pedidoModel.countPedidos)</td>
+                    <td>R$ @(pedidoModel.totalVendas.ToString("F2"))</td>
+                    <td>@Html.DisplayFor(model => pedidoModel.quantidadeTotal)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a asp-page="/Atendimento/Create" class="btn btn-success"> Fazer Atendimento</a><p></p>
+>>>>>>> bc2e163dd4269238490085dfda7dc9fc5c0ff17e
 </div>
 
 

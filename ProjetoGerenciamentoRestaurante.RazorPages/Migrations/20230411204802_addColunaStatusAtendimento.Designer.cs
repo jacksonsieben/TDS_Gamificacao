@@ -11,12 +11,8 @@ using ProjetoGerenciamentoRestaurante.RazorPages.Data;
 namespace ProjetoGerenciamentoRestaurante.RazorPages.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-<<<<<<<< HEAD:ProjetoGerenciamentoRestaurante.RazorPages/Migrations/20230417121457_CreateDatabase.Designer.cs
-    [Migration("20230417121457_CreateDatabase")]
-========
-    [Migration("20230410235506_CreateDatabase")]
->>>>>>>> bc2e163dd4269238490085dfda7dc9fc5c0ff17e:ProjetoGerenciamentoRestaurante.RazorPages/Migrations/20230410235506_CreateDatabase.Designer.cs
-    partial class CreateDatabase
+    [Migration("20230411204802_addColunaStatusAtendimento")]
+    partial class addColunaStatusAtendimento
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -30,14 +26,8 @@ namespace ProjetoGerenciamentoRestaurante.RazorPages.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<bool>("AtendimentoFechado")
+                    b.Property<bool>("AtedimentoFechado")
                         .HasColumnType("INTEGER");
-
-                    b.Property<DateTime?>("DataCriacao")
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime?>("DataSaida")
-                        .HasColumnType("TEXT");
 
                     b.Property<int>("MesaId")
                         .HasColumnType("INTEGER");

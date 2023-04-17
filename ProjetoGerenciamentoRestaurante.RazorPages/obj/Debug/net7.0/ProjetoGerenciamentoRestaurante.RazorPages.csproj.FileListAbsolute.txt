@@ -129,6 +129,7 @@ C:\Users\rodri\OneDrive\Documentos\Programacao\TDS\ProjetoGamificao\TDS_Gamifica
 C:\Users\rodri\OneDrive\Documentos\Programacao\TDS\ProjetoGamificao\TDS_Gamificacao\ProjetoGerenciamentoRestaurante.RazorPages\obj\Debug\net7.0\ProjetoGerenciamentoRestaurante.RazorPages.genruntimeconfig.cache
 C:\Users\rodri\OneDrive\Documentos\Programacao\TDS\ProjetoGamificao\TDS_Gamificacao\ProjetoGerenciamentoRestaurante.RazorPages\obj\Debug\net7.0\ref\ProjetoGerenciamentoRestaurante.RazorPages.dll
 C:\Users\rodri\OneDrive\Documentos\Programacao\TDS\ProjetoGamificao\TDS_Gamificacao\ProjetoGerenciamentoRestaurante.RazorPages\bin\Debug\net7.0\ProjetoGerenciamentoRestaurante.RazorPages.staticwebassets.runtime.json
+<<<<<<< HEAD
 C:\Users\rodri\OneDrive\Documentos\Programacao\TDS\ProjetoGamificao\pedidos_restaurante\gamificacao_pedidos_restaurante\bin\Debug\net7.0\appsettings.Development.json
 C:\Users\rodri\OneDrive\Documentos\Programacao\TDS\ProjetoGamificao\pedidos_restaurante\gamificacao_pedidos_restaurante\bin\Debug\net7.0\appsettings.json
 C:\Users\rodri\OneDrive\Documentos\Programacao\TDS\ProjetoGamificao\pedidos_restaurante\gamificacao_pedidos_restaurante\bin\Debug\net7.0\ProjetoGerenciamentoRestaurante.RazorPages.staticwebassets.runtime.json
@@ -393,3 +394,5 @@ C:\Users\rodri\Documents\Programacao\APIs\GamificacaoAtividade\TDS_Gamificacao\P
 C:\Users\rodri\Documents\Programacao\APIs\GamificacaoAtividade\TDS_Gamificacao\ProjetoGerenciamentoRestaurante.RazorPages\obj\Debug\net7.0\ProjetoGerenciamentoRestaurante.RazorPages.csproj.CopyComplete
 C:\Users\rodri\Documents\Programacao\APIs\GamificacaoAtividade\TDS_Gamificacao\ProjetoGerenciamentoRestaurante.RazorPages\obj\Debug\net7.0\ProjetoGerenciamentoRestaurante.RazorPages.genruntimeconfig.cache
 C:\Users\rodri\Documents\Programacao\APIs\GamificacaoAtividade\TDS_Gamificacao\ProjetoGerenciamentoRestaurante.RazorPages\obj\Debug\net7.0\ref\ProjetoGerenciamentoRestaurante.RazorPages.dll
+=======
+>>>>>>> bc2e163dd4269238490085dfda7dc9fc5c0ff17e

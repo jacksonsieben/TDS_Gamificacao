@@ -23,7 +23,7 @@
             <br/>
             <div class="form-group">
                 <label asp-for="ProdutoModel.Preco"></label>
-                <input asp-for="ProdutoModel.Preco" class="form-control"/>
+                <input asp-for="ProdutoModel.Preco" class="form-control" onkeyup="handlePreco(event)"/>
                 <span asp-validation-for="ProdutoModel.Preco" class="text-dange"></span>
             </div>
             <br/>
@@ -45,3 +45,21 @@
         </form>
     </div>
 </div>
+
+@section Scripts
+{
+<script>
+    const handlePreco = (event) => {
+        let input = event.target
+        input.value = precoMask(input.value)
+    }
+
+    const precoMask = (value) => {
+        if (!value) return ""
+        value = value.replace(/\D/g, '')
+        value = value.replace(/(\d)(\d{2})$/, "$1,$2")
+        return value
+    }
+
+</script>
+}

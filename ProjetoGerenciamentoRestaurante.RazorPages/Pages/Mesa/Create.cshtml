@@ -1,0 +1,34 @@
+@page
+@model ProjetoGerenciamentoRestaurante.RazorPages.Pages.Mesa.Create
+<h1>Cadastrar nova Mesa</h1>
+
+<hr/>
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-dange"></div>
+            <input type="hidden" asp-for="MesaModel.MesaId"/>
+            <div class="form-group">
+                <label asp-for="MesaModel.Numero"></label>
+                <input asp-for="MesaModel.Numero" value="" class="form-control"/>
+                <span asp-validation-for="MesaModel.Numero" class="text-dange"></span>
+            </div>
+            <br/>
+            <div class="form-group">
+                <label asp-for="MesaModel.Status">A mesa está ocupada?</label> </br>
+                <input asp-for="MesaModel.Status" type="checkbox" value=true>
+                <span asp-validation-for="MesaModel.Status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MesaModel.HoraAbertura">Hora de Abertura</label>
+                <input asp-for="MesaModel.HoraAbertura" class="form-control"/>
+                <span asp-validation-for="MesaModel.HoraAbertura" class="text-danger"></span>
+            </div>
+            <br/>
+            <div class="form-group">
+                <input type="submit" class="btn btn-primary" value="Salvar"/>
+                <a asp-page="/Mesa/Index" class="btn btn-secondary"> Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>

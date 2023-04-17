@@ -1,0 +1,17 @@
+@page "{id:int}"
+@model ProjetoGerenciamentoRestaurante.RazorPages.Pages.Produto.Delete
+
+<div>
+    <h1>Deseja realmente remover?</h1>
+
+    <p><strong>Nome:</strong> @Model.ProdutoModel.Nome </p>
+    <p><strong>Descrição:</strong> @Model.ProdutoModel.Descricao </p>
+    <p><strong>Preço: R$</strong> @Model.ProdutoModel.Preco </p>
+</div>
+
+<form method="post">
+    <div class="form-group">
+        <input type="submit" value="Sim" class="btn btn-danger"/>
+        <a asp-page="/Produto/Index" class="btn btn-primary"> Voltar</a>
+    </div>
+</form>

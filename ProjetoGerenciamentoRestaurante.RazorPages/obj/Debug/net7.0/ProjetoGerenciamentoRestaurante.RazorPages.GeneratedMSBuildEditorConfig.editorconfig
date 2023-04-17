@@ -1,0 +1,145 @@
+is_global = true
+build_property.TargetFramework = net7.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = ProjetoGerenciamentoRestaurante.RazorPages
+build_property.RootNamespace = ProjetoGerenciamentoRestaurante.RazorPages
+build_property.ProjectDir = C:\Users\rodri\Documents\Programacao\APIs\GamificacaoAtividade\TDS_Gamificacao\ProjetoGerenciamentoRestaurante.RazorPages\
+build_property.RazorLangVersion = 7.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\rodri\Documents\Programacao\APIs\GamificacaoAtividade\TDS_Gamificacao\ProjetoGerenciamentoRestaurante.RazorPages
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/rodri/Documents/Programacao/APIs/GamificacaoAtividade/TDS_Gamificacao/ProjetoGerenciamentoRestaurante.RazorPages/Design/css.cshtml]
+build_metadata.AdditionalFiles.TargetPath = RGVzaWduXGNzcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rodri/Documents/Programacao/APIs/GamificacaoAtividade/TDS_Gamificacao/ProjetoGerenciamentoRestaurante.RazorPages/Pages/Atendimento/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXRlbmRpbWVudG9cQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rodri/Documents/Programacao/APIs/GamificacaoAtividade/TDS_Gamificacao/ProjetoGerenciamentoRestaurante.RazorPages/Pages/Atendimento/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXRlbmRpbWVudG9cRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rodri/Documents/Programacao/APIs/GamificacaoAtividade/TDS_Gamificacao/ProjetoGerenciamentoRestaurante.RazorPages/Pages/Atendimento/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXRlbmRpbWVudG9cRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rodri/Documents/Programacao/APIs/GamificacaoAtividade/TDS_Gamificacao/ProjetoGerenciamentoRestaurante.RazorPages/Pages/Atendimento/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXRlbmRpbWVudG9cRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rodri/Documents/Programacao/APIs/GamificacaoAtividade/TDS_Gamificacao/ProjetoGerenciamentoRestaurante.RazorPages/Pages/Atendimento/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXRlbmRpbWVudG9cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rodri/Documents/Programacao/APIs/GamificacaoAtividade/TDS_Gamificacao/ProjetoGerenciamentoRestaurante.RazorPages/Pages/Categoria/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2F0ZWdvcmlhXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rodri/Documents/Programacao/APIs/GamificacaoAtividade/TDS_Gamificacao/ProjetoGerenciamentoRestaurante.RazorPages/Pages/Categoria/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2F0ZWdvcmlhXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rodri/Documents/Programacao/APIs/GamificacaoAtividade/TDS_Gamificacao/ProjetoGerenciamentoRestaurante.RazorPages/Pages/Categoria/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2F0ZWdvcmlhXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rodri/Documents/Programacao/APIs/GamificacaoAtividade/TDS_Gamificacao/ProjetoGerenciamentoRestaurante.RazorPages/Pages/Categoria/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2F0ZWdvcmlhXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rodri/Documents/Programacao/APIs/GamificacaoAtividade/TDS_Gamificacao/ProjetoGerenciamentoRestaurante.RazorPages/Pages/Categoria/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2F0ZWdvcmlhXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rodri/Documents/Programacao/APIs/GamificacaoAtividade/TDS_Gamificacao/ProjetoGerenciamentoRestaurante.RazorPages/Pages/Garcon/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR2FyY29uXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rodri/Documents/Programacao/APIs/GamificacaoAtividade/TDS_Gamificacao/ProjetoGerenciamentoRestaurante.RazorPages/Pages/Garcon/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR2FyY29uXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rodri/Documents/Programacao/APIs/GamificacaoAtividade/TDS_Gamificacao/ProjetoGerenciamentoRestaurante.RazorPages/Pages/Garcon/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR2FyY29uXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rodri/Documents/Programacao/APIs/GamificacaoAtividade/TDS_Gamificacao/ProjetoGerenciamentoRestaurante.RazorPages/Pages/Garcon/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR2FyY29uXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rodri/Documents/Programacao/APIs/GamificacaoAtividade/TDS_Gamificacao/ProjetoGerenciamentoRestaurante.RazorPages/Pages/Garcon/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR2FyY29uXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rodri/Documents/Programacao/APIs/GamificacaoAtividade/TDS_Gamificacao/ProjetoGerenciamentoRestaurante.RazorPages/Pages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rodri/Documents/Programacao/APIs/GamificacaoAtividade/TDS_Gamificacao/ProjetoGerenciamentoRestaurante.RazorPages/Pages/Mesa/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWVzYVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rodri/Documents/Programacao/APIs/GamificacaoAtividade/TDS_Gamificacao/ProjetoGerenciamentoRestaurante.RazorPages/Pages/Mesa/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWVzYVxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rodri/Documents/Programacao/APIs/GamificacaoAtividade/TDS_Gamificacao/ProjetoGerenciamentoRestaurante.RazorPages/Pages/Mesa/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWVzYVxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rodri/Documents/Programacao/APIs/GamificacaoAtividade/TDS_Gamificacao/ProjetoGerenciamentoRestaurante.RazorPages/Pages/Mesa/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWVzYVxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rodri/Documents/Programacao/APIs/GamificacaoAtividade/TDS_Gamificacao/ProjetoGerenciamentoRestaurante.RazorPages/Pages/Mesa/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWVzYVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rodri/Documents/Programacao/APIs/GamificacaoAtividade/TDS_Gamificacao/ProjetoGerenciamentoRestaurante.RazorPages/Pages/Pedido/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGVkaWRvXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rodri/Documents/Programacao/APIs/GamificacaoAtividade/TDS_Gamificacao/ProjetoGerenciamentoRestaurante.RazorPages/Pages/Produto/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZHV0b1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rodri/Documents/Programacao/APIs/GamificacaoAtividade/TDS_Gamificacao/ProjetoGerenciamentoRestaurante.RazorPages/Pages/Produto/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZHV0b1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rodri/Documents/Programacao/APIs/GamificacaoAtividade/TDS_Gamificacao/ProjetoGerenciamentoRestaurante.RazorPages/Pages/Produto/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZHV0b1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rodri/Documents/Programacao/APIs/GamificacaoAtividade/TDS_Gamificacao/ProjetoGerenciamentoRestaurante.RazorPages/Pages/Produto/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZHV0b1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rodri/Documents/Programacao/APIs/GamificacaoAtividade/TDS_Gamificacao/ProjetoGerenciamentoRestaurante.RazorPages/Pages/Produto/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZHV0b1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rodri/Documents/Programacao/APIs/GamificacaoAtividade/TDS_Gamificacao/ProjetoGerenciamentoRestaurante.RazorPages/Pages/Shared/_MainLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9NYWluTGF5b3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rodri/Documents/Programacao/APIs/GamificacaoAtividade/TDS_Gamificacao/ProjetoGerenciamentoRestaurante.RazorPages/Pages/Shared/_MainMenuPartialPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9NYWluTWVudVBhcnRpYWxQYWdlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rodri/Documents/Programacao/APIs/GamificacaoAtividade/TDS_Gamificacao/ProjetoGerenciamentoRestaurante.RazorPages/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rodri/Documents/Programacao/APIs/GamificacaoAtividade/TDS_Gamificacao/ProjetoGerenciamentoRestaurante.RazorPages/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
